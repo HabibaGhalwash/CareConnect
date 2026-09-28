@@ -1,0 +1,48 @@
+/* ────────────────────────────────────────────────────
+   ShadowTeacherInterface.css — Shadow Teacher Portal
+   Teal theme: #63ADA8 / #1A4A47
+──────────────────────────────────────────────────── */
+
+.sti-shell {
+  min-height: 100vh;
+}
+
+/* Teal-tinted focus for inputs */
+.sti-shell .pv-form-group input:focus,
+.sti-shell .pv-form-group textarea:focus {
+  border-color: #63ADA8;
+  box-shadow: 0 0 0 3px rgba(99, 173, 168, 0.12);
+}
+
+/* Chat input focus */
+.sti-shell .pv-chat-input-bar input:focus {
+  border-color: #63ADA8;
+}
+
+/* Shadow teacher message bubble */
+.sti-shell .pv-msg.me .pv-bubble {
+  background: #63ADA8;
+  color: #fff;
+  border-radius: 14px 14px 4px 14px;
+}
+
+/* Teal today badge */
+.sti-shell .pv-cal-day.today-st {
+  background: #63ADA8;
+}
+
+/* Teal stat override (uses same 'teal' class, already set in base) */
+.sti-shell .pv-stat.teal::before {
+  background: #63ADA8;
+}
+
+/* Spin animation for loading states */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,171 @@
+/* ────────────────────────────────────────────────
+   MembersList.css — right-panel group members
+──────────────────────────────────────────────── */
+
+.ml {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 16px 16px;
+    overflow-y: auto;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ── Toggle button (header row) ────────────────── */
+.ml__toggle-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 0 0 12px;
+    cursor: pointer;
+    text-align: left;
+    gap: 10px;
+}
+
+.ml__toggle-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #2d2d2d;
+}
+
+.ml__toggle-left svg {
+    flex-shrink: 0;
+    color: #9D64AA;
+}
+
+.ml__title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #2d2d2d;
+    margin: 0 0 2px;
+}
+
+.ml__count {
+    font-size: 11px;
+    color: #9b9b9b;
+    margin: 0;
+}
+
+/* Hide the chevron on desktop */
+.ml__chevron {
+    display: none;
+    color: #9D64AA;
+}
+
+/* ── Body (list wrapper) ──────────────────────── */
+/* Desktop: always visible */
+.ml__body {
+    overflow-y: auto;
+    flex: 1;
+}
+
+.ml__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.ml__item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ml__avatar {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.ml__avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ml__avatar-ph {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.ml__info {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.ml__name {
+    font-size: 13px;
+    font-weight: 600;
+    color: #2d2d2d;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ml__location {
+    font-size: 11px;
+    color: #9b9b9b;
+}
+
+/* ── Mobile: collapsible ──────────────────────── */
+@media (max-width: 768px) {
+    .ml {
+        padding: 0;
+        overflow: visible;
+        border-top: 1px solid #e0dbd4;
+    }
+
+    .ml__toggle-btn {
+        padding: 16px 20px;
+        background: #fff;
+    }
+
+    .ml__toggle-btn:hover {
+        background: #faf8fc;
+    }
+
+    /* Show chevron on mobile */
+    .ml__chevron {
+        display: flex;
+        align-items: center;
+    }
+
+    /* Body hidden by default on mobile */
+    .ml__body {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease;
+    }
+
+    /* Expanded state */
+    .ml__body--open {
+        max-height: 420px;
+        overflow-y: auto;
+    }
+
+    .ml__list {
+        padding: 4px 20px 16px;
+        gap: 14px;
+    }
+}
+
+.ml::-webkit-scrollbar-thumb {
+    background: #d8d2cc;
+    border-radius: 2px;
+}

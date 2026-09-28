@@ -1,0 +1,525 @@
+/* ── ChildInfoForm ────────────────────────────────── */
+
+/* ── Form wrapper ─────────────────────────────────────────────────────────
+   The <form> element itself. Stacks all fields and buttons vertically
+   with a consistent gap between each one. */
+.cif {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+}
+
+/* ── Title ────────────────────────────────────────────────────────────────
+     "Tell us about your child" heading at the top of the right panel. */
+.cif__title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #2d2d2d;
+  margin: 0 0 4px;
+  letter-spacing: -0.2px;
+}
+
+/* ── Child block ──────────────────────────────────────────────────────────
+     Wrapper for all fields belonging to one child.
+     Repeated once for every child in the children array. */
+.cif__child-block {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* ── Child block header row ───────────────────────────────────────────────
+     Row shown at the top of each child block when there are 2+ children.
+     Holds the "Child N" label on the left and the Remove button on the right. */
+.cif__child-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* "Child 1", "Child 2" … label in purple */
+.cif__child-num {
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #9D64AA;
+}
+
+/* ── Remove child button ──────────────────────────────────────────────────
+     Red text button with a trash icon. Appears only when there are 2+ children.
+     Removes that child's block from the form. */
+.cif__remove-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #e05555;
+  cursor: pointer;
+  padding: 0;
+  transition: opacity 0.15s;
+}
+
+.cif__remove-btn:hover {
+  opacity: 0.7;
+}
+
+/* ── Field wrapper ────────────────────────────────────────────────────────
+     Wraps a label + its input/select/textarea as a column pair.
+     Used for every individual field (name, DOB, gender, etc.). */
+.cif__field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* ── Field label ──────────────────────────────────────────────────────────
+     Small all-caps label above each input (e.g. "CHILD'S NAME", "GENDER"). */
+.cif__label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  color: #616161;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+/* ── Shared input styles ──────────────────────────────────────────────────
+     Applied to all text inputs, date inputs, selects, and textareas.
+     Light beige background with a subtle border that turns purple on focus. */
+.cif__input {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: #2d2d2d;
+  background: #f2f0ed;
+  border: 1px solid #ece8e2;
+  border-radius: 10px;
+  padding: 11px 14px;
+  outline: none;
+  width: 100%;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+/* Purple border + soft purple glow when any input is focused */
+.cif__input:focus {
+  border-color: #9D64AA;
+  box-shadow: 0 0 0 3px rgba(157, 100, 170, 0.12);
+}
+
+/* Placeholder text colour */
+.cif__input::placeholder {
+  color: #9f9a93;
+}
+
+/* ── Date field wrapper ───────────────────────────────────────────────────
+     Positions the calendar icon button absolutely inside the date input row.
+     The input gets extra right padding so text never overlaps the icon. */
+.cif__date-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.cif__input--date {
+  padding-right: 52px;
+  /* Keep browser date input behavior while using custom icon */
+  color-scheme: light;
+}
+
+/* Hides the browser's built-in calendar icon so only our custom one shows */
+.cif__input--date::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ── Calendar icon button ─────────────────────────────────────────────────
+     The purple circular button that opens the date picker programmatically.
+     Sits absolutely on the right side of the date input. */
+.cif__date-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 999px;
+  background: #f3effc;
+  color: #9D64AA;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+/* Darkens on hover to show it is clickable */
+.cif__date-icon:hover {
+  background: #ece3f9;
+  color: #7B4A87;
+}
+
+/* Purple outline when focused via keyboard for accessibility */
+.cif__date-icon:focus-visible {
+  outline: 2px solid #9D64AA;
+  outline-offset: 2px;
+}
+
+/* ── Gender radio row ─────────────────────────────────────────────────────
+     Lays "Female" and "Male" options side by side.
+     Each option is a hidden native radio + custom styled circle. */
+.cif__radio-row {
+  display: flex;
+  gap: 28px;
+}
+
+/* Wrapper label — clicking anywhere on it selects that radio option */
+.cif__radio-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Native radio input hidden visually; replaced by the custom circle below */
+.cif__radio-input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* ── Custom radio circle ──────────────────────────────────────────────────
+     The visible round outline that replaces the browser's default radio button.
+     When selected, a filled dot (.cif__radio-dot) appears inside it. */
+.cif__radio-circle {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid #9D64AA;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: #fff;
+  transition: border-color 0.15s;
+}
+
+/* Grey border for the unselected (empty) radio circle */
+.cif__radio-circle--empty {
+  border-color: #ccc5be;
+}
+
+/* Filled purple dot shown inside a selected radio circle */
+.cif__radio-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #9D64AA;
+}
+
+/* Radio option text label (e.g. "Female", "Male") */
+.cif__radio-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: #2d2d2d;
+  font-weight: 500;
+}
+
+/* ── Checkbox group (Special Need Type) ──────────────────────────────────
+     Wraps all special need checkboxes in a flowing wrap layout.
+     Multiple options can be checked at the same time. */
+.cif__checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 16px;
+  padding: 8px 0;
+}
+
+/* Wrapper label for each checkbox option — clicking selects/deselects it */
+.cif__checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: #2d2d2d;
+  font-weight: 500;
+  transition: color 0.15s;
+}
+
+/* Turns purple on hover to signal the option is clickable */
+.cif__checkbox-label:hover {
+  color: #9D64AA;
+}
+
+/* Native checkbox hidden; replaced by the custom .cif__checkbox-box below */
+.cif__checkbox-input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* ── Custom checkbox box ──────────────────────────────────────────────────
+     The visible square that replaces the browser's default checkbox.
+     Turns solid purple with a white checkmark when checked. */
+.cif__checkbox-box {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #9D64AA;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: #fff;
+  transition: background 0.15s, border-color 0.15s;
+  position: relative;
+}
+
+/* Fills the box with purple when the hidden checkbox is checked */
+.cif__checkbox-input:checked+.cif__checkbox-box {
+  background: #9D64AA;
+  border-color: #9D64AA;
+}
+
+/* White checkmark drawn with a CSS ::after pseudo-element */
+.cif__checkbox-input:checked+.cif__checkbox-box::after {
+  content: '✓';
+  position: absolute;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* ── Select wrapper (Special Need Type) ──────────────────────────────────
+     Wraps the checkbox group and previously the dropdown arrow icon.
+     Kept for layout structure even though the dropdown was replaced by checkboxes. */
+.cif__select-wrap {
+  position: relative;
+}
+
+/* Extra right padding so text doesn't overlap the dropdown arrow icon */
+.cif__select {
+  padding-right: 36px;
+  cursor: pointer;
+}
+
+/* Dropdown arrow icon positioned absolutely on the right of the select */
+.cif__select-arrow {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9b9b9b;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+}
+
+/* ── Textarea (Extra Details) ─────────────────────────────────────────────
+     Extends the shared .cif__input styles.
+     Allows the parent to resize it vertically if they need more space. */
+.cif__textarea {
+  resize: vertical;
+  min-height: 80px;
+  line-height: 1.55;
+}
+
+/* ── Add another child button ─────────────────────────────────────────────
+     Ghost button (no background/border) in purple.
+     Shows a CirclePlus icon and the label "Add another child".
+     Aligned to the left (flex-start) so it doesn't stretch full width. */
+.cif__add-child {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #9D64AA;
+  cursor: pointer;
+  padding: 2px 0;
+  transition: color 0.15s;
+  align-self: flex-start;
+}
+
+/* Darker purple on hover */
+.cif__add-child:hover {
+  color: #7B4A87;
+}
+
+/* Icon wrapper that ensures the CirclePlus icon aligns vertically */
+.cif__add-child-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+/* ── Complete Registration button ─────────────────────────────────────────
+     Primary CTA button. Full width, dark purple background.
+     Submits the form and triggers the handleSubmit function. */
+.cif__submit {
+  width: 100%;
+  padding: 15px;
+  background: #7B4A87;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+  letter-spacing: 0.3px;
+  margin-top: 4px;
+}
+
+/* Lifts slightly on hover for a tactile feel */
+.cif__submit:hover {
+  background: #5e3666;
+  transform: translateY(-1px);
+}
+
+/* Returns to original position when clicked */
+.cif__submit:active {
+  transform: translateY(0);
+}
+
+/* ── Skip for now link ────────────────────────────────────────────────────
+     Ghost button styled as a muted text link.
+     Lets the parent bypass adding children and go straight to the home page. */
+.cif__skip {
+  background: none;
+  border: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  color: #9b9b9b;
+  cursor: pointer;
+  text-align: center;
+  padding: 2px 0;
+  transition: color 0.15s;
+  align-self: center;
+}
+
+/* Turns dark purple on hover to hint it is interactive */
+.cif__skip:hover {
+  color: #7B4A87;
+}
+
+/* ── Success state ────────────────────────────────────────────────────────
+     Replaces the entire form after successful submission.
+     Shows a party popper icon, a "You're all set!" title, and a welcome message. */
+.cif__success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+/* Circular light purple background behind the party popper icon */
+.cif__success-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 999px;
+  background: #f3effc;
+  color: #9D64AA;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* "You're all set!" heading inside the success screen */
+.cif__success-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #2d2d2d;
+  margin: 0;
+}
+
+/* Subtitle paragraph below the success heading */
+.cif__success p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: #6b6b6b;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 280px;
+}
+
+/* ── Responsive — Small phones (max 520px) ───────────────────────────────
+   Slightly reduces font sizes and padding to fit smaller screens. */
+@media (max-width: 520px) {
+  .cif__title {
+    font-size: 20px;
+  }
+
+  .cif__input {
+    font-size: 13px;
+    padding: 10px 12px;
+  }
+
+  .cif__radio-text,
+  .cif__checkbox-label {
+    font-size: 13px;
+  }
+
+  .cif__label {
+    font-size: 9px;
+  }
+
+  .cif__submit {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .cif__add-child {
+    font-size: 13px;
+  }
+
+  /* Stacks gender radio options vertically on narrow screens */
+  .cif__radio-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+/* ── Responsive — Very small phones (max 380px) ──────────────────────────
+   Further reduces sizes for the smallest phone screens. */
+@media (max-width: 380px) {
+  .cif__title {
+    font-size: 18px;
+  }
+
+  .cif__input {
+    font-size: 12px;
+    padding: 8px 10px;
+  }
+
+  .cif__radio-text,
+  .cif__checkbox-label {
+    font-size: 12px;
+  }
+
+  .cif__submit {
+    font-size: 13px;
+  }
+}

@@ -1,0 +1,94 @@
+/* ── FileUpload ───────────────────────────────────── */
+.fu {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+  }
+  
+  .fu__label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    color: #6b6b6b;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+  }
+  
+  /* Drop zone */
+  .fu__zone {
+    border: 2px dashed #ccc5be;
+    border-radius: 12px;
+  padding: 18px 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    cursor: pointer;
+    background: #faf8f6;
+    transition: border-color 0.2s, background 0.2s;
+    outline: none;
+  }
+  
+  .fu__zone:hover,
+  .fu__zone:focus {
+    border-color: #9D64AA;
+    background: #faf5fc;
+  }
+  
+  .fu__zone--drag {
+    border-color: #9D64AA;
+    background: #f5eef9;
+  }
+  
+  .fu__zone--done {
+    border-color: #9D64AA;
+    background: #f5eef9;
+  }
+  
+  /* Cloud icon */
+  .fu__icon {
+    color: #9D64AA;
+  margin-bottom: 2px;
+  }
+  
+  .fu__cta {
+    font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+    font-weight: 600;
+    color: #2d2d2d;
+    text-align: center;
+    margin: 0;
+  }
+  
+  .fu__hint {
+    font-family: 'Poppins', sans-serif;
+  font-size: 10px;
+    color: #9b9b9b;
+    text-align: center;
+    margin: 0;
+  }
+  
+  .fu__filename {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: #9D64AA;
+    text-align: center;
+    margin: 0;
+    word-break: break-all;
+  }
+  
+  /* Hidden native input */
+  .fu__input {
+    display: none;
+  }
+  
+  /* Error */
+  .fu__error {
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    color: #e05555;
+    margin: 0;
+  }

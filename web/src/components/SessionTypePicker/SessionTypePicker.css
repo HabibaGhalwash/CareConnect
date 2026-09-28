@@ -1,0 +1,113 @@
+/* ── SessionTypePicker ───────────────────────────── */
+.stp {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Each option */
+.stp__option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.stp__option:hover {
+  transform: translateY(-2px);
+}
+
+/* Image wrapper */
+.stp__img-wrap {
+  border-radius: 14px;
+  overflow: hidden;
+  width: 200px;
+  height: 140px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.stp__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Placeholder (when no image asset) */
+.stp__img-ph {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+}
+
+.stp__img-ph--inperson {
+  background: linear-gradient(135deg, #c8e6e3, #e8f4f2);
+}
+
+.stp__img-ph--online {
+  background: linear-gradient(135deg, #d5c8f0, #ede6fa);
+}
+
+/* Label row (radio + text) */
+.stp__label-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Custom radio circle */
+.stp__radio {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #d0cbc3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: border-color 0.2s;
+  background: #fff;
+}
+
+.stp__radio--checked {
+  border-color: #9CCFC9;
+  background: #9CCFC9;
+}
+
+.stp__radio--purple {
+  border-color: #9D64AA;
+  background: #9D64AA;
+}
+
+.stp__radio-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+/* Label text */
+.stp__label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #2d2d2d;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .stp {
+    gap: 20px;
+  }
+
+  .stp__img-wrap {
+    width: 140px;
+    height: 100px;
+  }
+}

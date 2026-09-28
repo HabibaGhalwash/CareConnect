@@ -1,0 +1,73 @@
+/* ── TeamMemberCard ───────────────────────────────── */
+.tmc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+  flex: 1;
+  min-width: 160px;
+  max-width: 200px;
+}
+
+/* Avatar */
+.tmc__avatar-wrap {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  border: 3px solid #ffffff;
+  flex-shrink: 0;
+  transition: transform 0.25s;
+}
+
+.tmc:hover .tmc__avatar-wrap {
+  transform: scale(1.05);
+}
+
+.tmc__avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.tmc__avatar-ph {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+/* Text */
+.tmc__name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #2d2d2d;
+  margin: 0;
+}
+
+.tmc__role {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #9D64AA;
+  margin: 0;
+  letter-spacing: 0.2px;
+}
+
+.tmc__bio {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  color: #6b6b6b;
+  line-height: 1.55;
+  margin: 0;
+}

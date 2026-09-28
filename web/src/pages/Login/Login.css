@@ -1,0 +1,298 @@
+/* ────────────────────────────────────────────────────
+   Login.css — CareConnect Login Page
+   Color palette (matching all project pages):
+     Purple primary:  #9D64AA
+     Purple dark:     #7B4A87
+     Purple submit:   #8f4f9d
+     Background:      #F6F2EE  (warm off-white)
+     Card bg:         #ffffff
+     Input bg:        #f2f0ed
+     Input border:    #ece8e2
+     Text dark:       #2d2d2d
+     Text gray:       #6b6b6b
+     Font:            Poppins
+──────────────────────────────────────────────────── */
+
+/* ── Page — full-screen warm bg, card centered ─────── */
+.login-page {
+    font-family: 'Poppins', sans-serif;
+    background: #C4A0CC;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 16px;
+  }
+  
+  /* ══════════════════════════════════════════════════
+     WHITE CARD
+  ══════════════════════════════════════════════════ */
+  .login-card {
+    background: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 32px 64px -16px rgba(134, 79, 147, 0.08);
+    border: 1px solid #f0ece8;
+    padding: 48px 52px 44px;
+    width: 100%;
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  /* ── Title ───────────────────────────────────────── */
+  .login-card__title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #2d2d2d;
+    text-align: center;
+    margin: 0 0 8px;
+    letter-spacing: -0.3px;
+  }
+  
+  /* ── Subtitle ─────────────────────────────────────── */
+  .login-card__sub {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #6b6b6b;
+    text-align: center;
+    margin: 0 0 32px;
+    line-height: 1.5;
+  }
+  
+  /* ══════════════════════════════════════════════════
+     FORM
+  ══════════════════════════════════════════════════ */
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  /* ── Field block ──────────────────────────────────── */
+  .login-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  
+  /* Label row (label + Forgot Password link) */
+  .login-label-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  /* Label */
+  .login-label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: #616161;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+  }
+  
+  /* Forgot password */
+  .login-forgot {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: #9D64AA;
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  
+  .login-forgot:hover { color: #7B4A87; }
+  
+  /* ── Input wrapper (icon + input [+ eye btn]) ─────── */
+  .login-input-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: #f2f0ed;
+    border: 1px solid #ece8e2;
+    border-radius: 12px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  
+  .login-input-wrap:focus-within {
+    border-color: #9D64AA;
+    box-shadow: 0 0 0 3px rgba(157, 100, 170, 0.12);
+  }
+  
+  /* Left icon */
+  .login-input-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9b9b9b;
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+    flex-shrink: 0;
+  }
+  
+  /* Input */
+  .login-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #2d2d2d;
+    padding: 13px 14px 13px 44px;
+    width: 100%;
+    border-radius: 12px;
+  }
+  
+  .login-input::placeholder {
+    color: #9f9a93;
+  }
+  
+  /* Password input — extra right padding for eye button */
+  .login-input--password {
+    padding-right: 44px;
+  }
+  
+  /* Eye toggle button */
+  .login-eye-btn {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #9b9b9b;
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    border-radius: 6px;
+    transition: color 0.15s;
+    flex-shrink: 0;
+  }
+  
+  .login-eye-btn:hover { color: #9D64AA; }
+  
+  /* ── Error message ────────────────────────────────── */
+  .login-error {
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    color: #e05555;
+    margin: -4px 0 0;
+    padding: 0;
+  }
+  
+  /* ── Log In button ────────────────────────────────── */
+  .login-btn {
+    width: 100%;
+    padding: 15px;
+    background: #8f4f9d;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    margin-top: 4px;
+    transition: background 0.2s, transform 0.15s;
+    letter-spacing: 0.3px;
+  }
+  
+  .login-btn:hover:not(:disabled) {
+    background: #7b4288;
+    transform: translateY(-1px);
+  }
+  
+  .login-btn:active { transform: translateY(0); }
+  
+  .login-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+  }
+  
+  /* ── OR divider ───────────────────────────────────── */
+  .login-or {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .login-or__line {
+    flex: 1;
+    height: 1px;
+    background: #e0dbd4;
+  }
+  
+  .login-or__text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: #8a8580;
+    letter-spacing: 1px;
+  }
+  
+  /* ── Continue with Google button ──────────────────── */
+  .login-google {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 13px 14px;
+    background: #ffffff;
+    border: 1px solid #e0dbd4;
+    border-radius: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #2d2d2d;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+  }
+  
+  .login-google:hover {
+    background: #faf8f6;
+    border-color: #ccc5be;
+  }
+  
+  .login-google__icon {
+    flex-shrink: 0;
+  }
+  
+  /* ── "Don't have an account?" link ───────────────── */
+  .login-signup-link {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #6b6b6b;
+    text-align: center;
+    margin: 20px 0 0;
+    padding: 0;
+  }
+  
+  .login-signup-link__cta {
+    font-weight: 700;
+    color: #9D64AA;
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  
+  .login-signup-link__cta:hover { color: #7B4A87; }
+  
+  /* ── Responsive ───────────────────────────────────── */
+  @media (max-width: 520px) {
+    .login-card {
+      padding: 36px 24px 32px;
+      border-radius: 20px;
+    }
+  
+    .login-card__title {
+      font-size: 26px;
+    }
+  }

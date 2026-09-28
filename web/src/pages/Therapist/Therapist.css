@@ -1,0 +1,604 @@
+/* 
+   THERAPIST PAGE WRAPPER
+
+   Controls the full page font, background, text color,
+   and prevents horizontal overflow.
+*/
+.therapist-page {
+  font-family: 'Poppins', sans-serif;
+  background: #F6F2EE;
+  color: #2d2d2d;
+  overflow-x: hidden;
+}
+
+/* 
+   HERO SECTION
+
+   Main top section of the therapist page.
+   Contains the title, search bar, and therapist cards.
+*/
+
+/* The background color of the top section of the therapist page */
+.therapist-hero {
+  background: #F6F2EE;
+  padding: 48px 48px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 300px;
+  position: relative;
+}
+
+/* 
+   HERO LEFT SIDE
+
+   Holds the page title and search bar.
+*/
+.therapist-hero__left {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  flex-shrink: 0;
+}
+
+/* 
+   HERO TITLE
+
+   Main heading: Therapist Lookup.
+*/
+
+/*Text: "Therapist Lookup" in the first section of the therapist page */
+.therapist-hero__title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #2d2d2d;
+  letter-spacing: -0.3px;
+}
+
+/* 
+   SEARCH BAR
+
+   Main search container.
+   Holds the input and search button.
+*/
+.therapist-hero__search {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border: 1.5px solid #e0dbd4;
+  border-radius: 30px;
+  width: 480px;
+  padding: 8px 8px 8px 18px;
+  gap: 8px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* 
+   SEARCH BAR FOCUSED STATE
+
+   Adds purple border and glow when the input is focused.
+*/
+.therapist-hero__search--focused {
+  border-color: #9D64AA;
+  box-shadow: 0 0 0 3px rgba(123, 92, 191, 0.12);
+}
+
+/* 
+   SEARCH INPUT
+   Text input used to search by therapist name or specialization.
+*/
+.therapist-hero__search-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  color: #2d2d2d;
+}
+
+/* 
+   SEARCH INPUT PLACEHOLDER
+
+   Styles the placeholder text.
+*/
+
+/* The color of the placeholder text in search bar " Search by name or specialization " */
+.therapist-hero__search-input::placeholder {
+  color: #b0aaaa;
+}
+
+/* 
+   SEARCH BUTTON
+   Circular purple button with search icon.
+*/
+.therapist-hero__search-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #9D64AA;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+
+.therapist-hero__search-btn:hover {
+  background: #7B4A87;
+}
+
+/* 
+   NO RESULTS MESSAGE
+
+   Used for loading, error, or no therapist results.
+*/
+
+/* The color of the no results message text ( when i search non-existng therapist)  the message " No therapists found matching your search " */
+.therapist-hero__no-results {
+  padding: 32px 24px;
+  text-align: center;
+  color: #6b6b6b;
+}
+
+.therapist-hero__no-results p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  margin: 0;
+}
+
+/* 
+   HERO CARDS CONTAINER
+
+   Holds the therapist cards shown in the hero section.
+*/
+.therapist-hero__cards {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+  justify-content: flex-start;
+}
+
+/* 
+   HERO CARD CHILDREN
+
+   Adds stacking layer and smooth movement to each therapist card.
+*/
+.therapist-hero__cards>* {
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+
+/* 
+   FIRST HERO CARD
+
+   Makes the first therapist card larger than the rest.
+*/
+.therapist-hero__cards>*:first-child {
+  width: 220px;
+  height: 320px;
+  flex-shrink: 0;
+}
+
+/* 
+   OTHER HERO CARDS
+
+   Smaller therapist cards beside the first card.
+*/
+.therapist-hero__cards>*:not(:first-child) {
+  width: 150px;
+  height: 220px;
+  flex-shrink: 0;
+}
+
+/* 
+   VIEW MORE BUTTON
+   Shows or hides the additional therapist grid.
+*/
+.therapist-hero__view-more-btn {
+  position: absolute;
+  bottom: 20px;
+  right: 48px;
+  background: #9D64AA;
+  color: #ffffff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 25px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.therapist-hero__view-more-btn:hover {
+  background: #7B4A87;
+  transform: translateY(-2px);
+}
+
+.therapist-hero__view-more-btn:active {
+  transform: translateY(0);
+}
+
+/* 
+   ADDITIONAL THERAPISTS SECTION
+
+   White section that appears when clicking View More.
+*/
+
+/* The background color of the section of therapists when clicking the view more button */
+.therapist-grid {
+  background: #ffffff;
+  padding: 56px 48px;
+  animation: slideDown 0.4s ease;
+}
+
+/* 
+   SLIDE DOWN ANIMATION
+
+   Makes the extra therapist section appear smoothly.
+*/
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 
+   THERAPIST GRID CONTAINER
+
+   Centers the grid content and limits max width.
+*/
+.therapist-grid__container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 
+   THERAPIST GRID TITLE
+
+   Heading above the available therapists grid.
+*/
+
+/* The text " Available therapists "  */
+.therapist-grid__title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #2d2d2d;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* 
+   THERAPIST GRID CARDS
+
+   Displays therapist cards in 4 columns on desktop.
+*/
+.therapist-grid__cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* 
+   THERAPIST GRID CARD WRAPPER
+
+   Holds one therapist card and its text/button below.
+*/
+.therapist-grid__card-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+/* 
+   GRID THERAPIST CARD SIZE
+
+   Controls card size inside the grid.
+*/
+.therapist-grid__card-wrapper .therapist-card {
+  width: 160px;
+  height: 200px;
+  margin-bottom: 16px;
+  transition: all 0.3s ease;
+}
+
+/* 
+   GRID THERAPIST CARD HOVER
+
+   Enlarges the therapist card slightly on hover.
+*/
+.therapist-grid__card-wrapper .therapist-card:hover {
+  width: 180px;
+  height: 230px;
+}
+
+/* 
+   CARD INFO
+
+   Holds therapist name, specialization, experience, and booking button.
+*/
+.therapist-grid__card-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 
+   CARD NAME
+   Therapist name under the card.
+*/
+.therapist-grid__card-info h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #2d2d2d;
+  margin: 0;
+  text-align: center;
+}
+
+/* 
+   CARD TEXT
+   Therapist specialization and small text.
+*/
+.therapist-grid__card-info p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: #6b6b6b;
+  margin: 0;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+/* 
+   YEARS TEXT
+   Styles therapist experience text.
+*/
+.therapist-grid__years {
+  font-size: 12px;
+  color: #9D64AA;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+/* 
+   BOOK BUTTON
+
+   Button used to open therapist profile / booking page.
+*/
+.therapist-grid__book-btn {
+  background: #9D64AA;
+  color: #ffffff;
+  border: none;
+  padding: 10px 0;
+  width: 160px;
+  border-radius: 25px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 4px 14px rgba(157, 100, 170, 0.35);
+}
+
+.therapist-grid__book-btn:hover {
+  background: #7B4A87;
+  transform: translateY(-2px);
+}
+
+/* 
+   PAGINATION CONTAINER
+
+   Holds previous button, dots, and next button.
+*/
+.therapist-grid__pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 36px;
+}
+
+/* 
+   PAGINATION ARROW BUTTON
+
+   Left and right arrow buttons.
+*/
+.therapist-grid__pagination-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  color: #9D64AA;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s, transform 0.2s;
+  padding: 0;
+}
+
+.therapist-grid__pagination-btn:hover:not(:disabled) {
+  color: #7B4A87;
+  transform: scale(1.2);
+  background: transparent;
+}
+
+/* 
+   DISABLED PAGINATION BUTTON
+
+   Used when user is on the first or last page.
+*/
+.therapist-grid__pagination-btn:disabled {
+  color: #d4c4f0;
+  cursor: not-allowed;
+  border: none;
+}
+
+/* 
+   PAGINATION DOT
+
+   Represents each page as a small circle.
+*/
+.therapist-grid__pagination-dot {
+  width: 10px;
+  height: 10px;
+  min-height: 10px;
+  max-height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: #d4c4f0;
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.therapist-grid__pagination-dot:hover {
+  background: #9D64AA;
+  transform: scale(1.2);
+}
+
+/* 
+   ACTIVE PAGINATION DOT
+
+   Shows the selected page.
+*/
+.therapist-grid__pagination-dot--active {
+  background: #9D64AA;
+  transform: scale(1.3);
+}
+
+
+
+/* 
+   RESPONSIVE DESIGN FOR TABLETS
+
+   Stacks the hero content and makes cards horizontally scrollable.
+*/
+@media (max-width: 768px) {
+  .therapist-hero {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 36px 20px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .therapist-hero__search {
+    width: 100%;
+    max-width: 100%;
+    padding: 6px 6px 6px 14px;
+    border-radius: 24px;
+  }
+
+  .therapist-hero__search-input {
+    font-size: 12px;
+  }
+
+  .therapist-hero__search-btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .therapist-hero__cards {
+    width: calc(100% + 40px);
+    margin-left: -20px;
+    padding: 16px 20px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    align-self: flex-start;
+    display: flex;
+    gap: 12px;
+  }
+
+  .therapist-hero__cards::-webkit-scrollbar {
+    display: none;
+  }
+
+  .therapist-hero__cards>*:first-child,
+  .therapist-hero__cards>*:not(:first-child) {
+    width: 130px;
+    height: 190px;
+    flex-shrink: 0;
+  }
+
+  .therapist-hero__title {
+    font-size: 22px;
+  }
+
+  .therapist-hero__view-more-btn {
+    position: static;
+    margin-top: 12px;
+    width: 100%;
+  }
+
+  .therapist-grid {
+    padding: 36px 20px;
+  }
+
+  .therapist-grid__title {
+    font-size: 22px;
+  }
+
+  .therapist-grid__cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+/* 
+   RESPONSIVE DESIGN FOR SMALL MOBILE
+
+   Keeps therapist cards in two smaller columns.
+*/
+@media (max-width: 480px) {
+  .therapist-grid__cards {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .therapist-grid__card-wrapper .therapist-card {
+    width: 100%;
+    max-width: 140px;
+    height: 170px;
+  }
+
+  .therapist-grid__card-info h3 {
+    font-size: 14px;
+  }
+
+  .therapist-grid__card-info p {
+    font-size: 12px;
+  }
+
+  .therapist-grid__book-btn {
+    width: 100%;
+    max-width: 130px;
+    font-size: 12px;
+    padding: 8px 0;
+  }
+}

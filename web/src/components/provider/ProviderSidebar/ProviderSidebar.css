@@ -1,0 +1,181 @@
+/* ── ProviderSidebar ──────────────────────────── */
+.pvs {
+  width: 220px;
+  min-width: 220px;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+/* Role-specific background */
+.pvs--therapist     { background: #5C3D7A; }
+.pvs--shadow-teacher{ background: #4E7D78; }
+
+/* ── Top (logo bar) ────────────────────────────── */
+.pvs__top {
+  background: #9172BB;
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pvs--shadow-teacher .pvs__top {
+  background: #6B9E98;
+}
+
+.pvs__logo-img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.pvs__logo {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+/* ── Avatar area ───────────────────────────────── */
+.pvs__avatar-area {
+  padding: 20px 0 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.pvs__avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.pvs--therapist      .pvs__avatar { background: #A48CD6; }
+.pvs--shadow-teacher .pvs__avatar { background: #63ADA8; }
+
+.pvs__name {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.4;
+  padding: 0 12px;
+}
+
+.pvs__role {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 3px;
+}
+
+.pvs--therapist      .pvs__role { color: #A48CD6; }
+.pvs--shadow-teacher .pvs__role { color: #9CCFC9; }
+
+/* ── Nav ───────────────────────────────────────── */
+.pvs__nav {
+  flex: 1;
+  padding: 8px 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.pvs__nav::-webkit-scrollbar { width: 3px; }
+.pvs__nav::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); }
+
+.pvs__nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 20px;
+  cursor: pointer;
+  color: #C9C9C9;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: 'DM Sans', sans-serif;
+  transition: all 0.15s;
+  position: relative;
+  background: none;
+  border: none;
+  text-align: left;
+  width: 100%;
+}
+
+.pvs__nav-item:hover {
+  color: #fff;
+  background: rgba(255,255,255,0.06);
+}
+
+.pvs__nav-item--active {
+  color: #fff;
+  font-weight: 600;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: rgba(255,255,255,0.12);
+}
+
+/* Active left bar */
+.pvs__nav-item--active::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  border-radius: 0 3px 3px 0;
+}
+
+.pvs--therapist      .pvs__nav-item--active::before { background: #9CCFC9; }
+.pvs--shadow-teacher .pvs__nav-item--active::before { background: #FFB66E; }
+
+.pvs__nav-icon-svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: currentColor;
+}
+
+.pvs__nav-label { white-space: nowrap; }
+
+/* ── Logout ────────────────────────────────────── */
+.pvs__logout {
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255,255,255,0.35);
+  font-size: 12px;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  background: none;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  text-align: left;
+  transition: color 0.15s;
+  width: 100%;
+}
+
+.pvs__logout:hover { color: rgba(255,255,255,0.65); }
+
+.pvs__logout-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  color: currentColor;
+}

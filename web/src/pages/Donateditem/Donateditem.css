@@ -1,0 +1,243 @@
+/* =========================================
+   Donated Item Page
+   ========================================= */
+/*color of the background in the donated item page*/
+.donated-item-page {
+  background-color: #f0ece6;
+  min-height: 100vh;
+  padding: 48px 0 72px;
+}
+
+.donated-item__container {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Back button */
+.donated-item__back-btn {
+  align-self: flex-start;
+  margin: 24px 0 24px 0;
+  background: transparent;
+  border: 1.5px solid #9D64AA;
+  color: #9D64AA;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.donated-item__back-btn:hover {
+  background: #9D64AA;
+  color: #ffffff;
+  transform: translateX(-4px);
+}
+
+/* =========================================
+     Main Card (Image + Details)
+     ========================================= */
+/*the white big box which contains the details of the item*/
+.donated-item__card {
+  background: #ffffff;
+  border: 1px solid #e1ddd6;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 0;
+  padding: 28px 32px;
+  gap: 32px;
+}
+
+/* Left: Image */
+.donated-item__image-wrapper {
+  flex-shrink: 0;
+  width: 240px;
+  height: 240px;
+  overflow: hidden;
+  background: #f2efea;
+  border: 1px solid #d7d2c8;
+}
+
+.donated-item__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Right: Details */
+.donated-item__details {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 12px;
+  flex: 1;
+}
+
+.donated-item__name {
+  font-size: 22px;
+  font-weight: 700;
+  color: #2c2c2a;
+  margin: 0;
+  letter-spacing: -0.2px;
+}
+
+.donated-item__description {
+  font-size: 14.5px;
+  color: #5a5650;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.donated-item__usage {
+  font-size: 15px;
+  color: #2c2c2a;
+  margin: 0;
+}
+
+.donated-item__usage strong {
+  font-weight: 700;
+}
+
+/* Confirm Button */
+.donated-item__confirm-btn {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  margin-top: 8px;
+  padding: 13px 24px;
+  background: #a375c3;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.donated-item__confirm-btn:hover {
+  background: #8f61b0;
+  transform: translateY(-1px);
+}
+
+.donated-item__confirm-btn:active {
+  background: #76489b;
+  transform: translateY(0);
+}
+
+.donated-item__confirm-btn--confirmed {
+  background: #6aab78;
+  cursor: default;
+}
+
+.donated-item__confirm-btn--confirmed:hover {
+  background: #6aab78;
+  transform: none;
+}
+
+/* =========================================
+     Footer Row: Contact + Shipping
+     ========================================= */
+
+.donated-item__footer-row {
+  background: #ffffff;
+  border: 1px solid #e1ddd6;
+  border-top: none;
+  padding: 18px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.donated-item__contact {
+  font-size: 14.5px;
+  color: #2c2c2a;
+  margin: 0;
+  font-weight: 500;
+}
+
+.donated-item__contact-label {
+  font-weight: 700;
+}
+
+/* Shipping Row */
+.donated-item__shipping {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.donated-item__shipping-label {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #2c2c2a;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.donated-item__address-input {
+  flex: 1;
+  max-width: 340px;
+  padding: 10px 16px;
+  font-size: 14px;
+  color: #2c2c2a;
+  background: #f8f5f1;
+  border: 1px solid #d7d2c8;
+  border-radius: 24px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.donated-item__address-input::placeholder {
+  color: #b0aaa2;
+}
+
+.donated-item__address-input:focus {
+  border-color: #a375c3;
+  box-shadow: 0 0 0 3px rgba(163, 117, 195, 0.15);
+}
+
+/* =========================================
+     Responsive
+     ========================================= */
+
+@media (max-width: 680px) {
+  .donated-item__card {
+    flex-direction: column;
+    padding: 20px 18px;
+    gap: 20px;
+  }
+
+  .donated-item__image-wrapper {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  .donated-item__confirm-btn {
+    max-width: 100%;
+  }
+
+  .donated-item__footer-row {
+    padding: 16px 18px;
+  }
+
+  .donated-item__shipping {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .donated-item__address-input {
+    max-width: 100%;
+    width: 100%;
+  }
+}

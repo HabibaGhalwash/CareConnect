@@ -1,0 +1,293 @@
+/* ── SignupForm ───────────────────────────────────── */
+
+.sf {
+    width: 100%;
+    max-width: 552px;
+    height: auto;
+    border-radius: 32px;
+    background: #ffffff;
+    box-shadow: 0 32px 64px -16px rgba(134, 79, 147, 0.08);
+    padding: 14px 16px 16px;
+    border: 1px solid #f0ece8;
+    overflow: hidden;
+}
+
+.sf__tabs {
+    display: flex;
+    gap: 8px;
+    background: #f1eeea;
+    border-radius: 18px;
+    padding: 6px;
+}
+
+.sf__tab {
+    flex: 1;
+    padding: 13px 12px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    background: transparent;
+    color: #6b6b6b;
+    border-radius: 14px;
+}
+
+.sf__tab--active {
+    background: #9D64AA;
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(123, 74, 135, 0.35);
+}
+
+.sf__tab:not(.sf__tab--active):hover {
+    background: #ede6f3;
+    color: #7B4A87;
+}
+
+.sf__body {
+    padding: 12px 8px 4px;
+}
+
+.sf__form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.sf__form-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 34px;
+    font-weight: 700;
+    color: #2d2d2d;
+    margin: 0;
+}
+
+.sf__form-sub {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    color: #737373;
+    margin: -4px 0 6px;
+}
+
+.sf__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.sf__field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.sf__field--full {
+    grid-column: 1 / -1;
+}
+
+.sf__label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: #616161;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+.sf__input {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #2d2d2d;
+    background: #f2f0ed;
+    border: 1px solid #ece8e2;
+    border-radius: 10px;
+    padding: 11px 14px;
+    outline: none;
+    width: 100%;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.sf__input:focus {
+    border-color: #9D64AA;
+    box-shadow: 0 0 0 3px rgba(157, 100, 170, 0.12);
+}
+
+.sf__input::placeholder {
+    color: #9f9a93;
+}
+
+.sf__textarea {
+    resize: vertical;
+    min-height: 72px;
+    line-height: 1.5;
+}
+
+.sf__select-wrap {
+    position: relative;
+}
+
+.sf__select {
+    padding-right: 32px;
+    cursor: pointer;
+}
+
+.sf__select option[value=""][disabled] {
+    color: #c0b8b0;
+}
+
+.sf__select-arrow {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #9b9b9b;
+    pointer-events: none;
+    line-height: 1;
+}
+
+.sf__submit {
+    width: 100%;
+    padding: 12px;
+    background: #8f4f9d;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    border: none;
+    border-radius: 11px;
+    cursor: pointer;
+    margin-top: 4px;
+    transition: background 0.2s, transform 0.15s;
+    letter-spacing: 0.3px;
+}
+
+.sf__submit:hover {
+    background: #7b4288;
+    transform: translateY(-1px);
+}
+
+.sf__or {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 0;
+}
+
+.sf__or-line {
+    flex: 1;
+    height: 1px;
+    background: #bfb8b1;
+}
+
+.sf__or-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: #8a8580;
+    letter-spacing: 1px;
+}
+
+.sf__google {
+    width: 100%;
+    border: 1px solid #ece8e2;
+    border-radius: 10px;
+    background: #f2f0ed;
+    color: #2d2d2d;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 11px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    cursor: pointer;
+}
+
+.sf__google-g {
+    font-size: 24px;
+    line-height: 1;
+    font-weight: 700;
+    background: linear-gradient(45deg, #4285f4 0%, #34a853 35%, #fbbc05 65%, #ea4335 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.sf__submit:active {
+    transform: translateY(0);
+}
+
+.sf__success {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    padding: 32px 20px;
+    text-align: center;
+}
+
+.sf__success-icon {
+    font-size: 40px;
+}
+
+.sf__success p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #2d2d2d;
+    line-height: 1.6;
+    max-width: 280px;
+}
+
+@media (max-width: 520px) {
+    .sf__row {
+        grid-template-columns: 1fr;
+    }
+
+    .sf__body {
+        padding: 16px 10px 20px;
+    }
+
+    .sf {
+        border-radius: 20px;
+        padding: 12px 12px 16px;
+        height: auto;
+    }
+
+    .sf__tab {
+        font-size: 13px;
+        padding: 10px 8px;
+    }
+
+    .sf__form-title {
+        font-size: 24px;
+    }
+
+    .sf__input {
+        font-size: 13px;
+        padding: 10px 12px;
+    }
+}
+
+@media (max-width: 380px) {
+    .sf__tab {
+        font-size: 11px;
+        padding: 8px 4px;
+    }
+
+    .sf__form-title {
+        font-size: 20px;
+    }
+
+    .sf__body {
+        padding: 12px 8px 16px;
+    }
+
+    .sf {
+        padding: 10px 10px 14px;
+    }
+}

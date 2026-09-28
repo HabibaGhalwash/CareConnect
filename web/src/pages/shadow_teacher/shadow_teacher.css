@@ -1,0 +1,845 @@
+/* ── Shadow Teacher Page ─────────────────────────── */
+
+/* 
+   PAGE WRAPPER
+
+   Controls the full page background, font, and layout direction.
+*/
+.st-page {
+  min-height: 100vh;
+  background: #F6F2EE;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* 
+   HERO SECTION
+
+   This is the top visual area of the page.
+   It contains the main hero image and the floating info cards.
+*/
+.st-hero {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0;
+  overflow: visible;
+  padding-bottom: 0px;
+}
+
+/* 
+   HERO MAIN IMAGE CONTAINER
+
+   Controls the size and background of the hero image area.
+*/
+.st-hero__main {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: visible;
+  background: #EEE9E2;
+}
+
+/* 
+   HERO IMAGE
+
+   Makes the image fill the full hero container.
+*/
+.st-hero__main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+/* 
+   HERO CARDS CONTAINER
+
+   Holds the three cards under the hero image.
+   Negative margin makes them overlap the image.
+*/
+.st-hero__cards {
+  display: flex;
+  gap: 20px;
+  padding: 0 48px;
+  margin-top: -80px;
+  position: relative;
+  z-index: 10;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* 
+   HERO CARD
+
+   Styles each floating information card.
+*/
+
+/*The colors of the 3 boxes under the teacher picture in the shadow teacher page*/
+.st-hero__card {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(6px);
+  border-radius: 12px;
+  padding: 18px 24px;
+  width: 220px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* 
+   HERO CARD HOVER
+
+   Moves the card slightly up when hovering.
+*/
+.st-hero__card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.16);
+}
+
+/* 
+   HERO CARD ICON
+
+   Controls spacing around the icon inside each card.
+*/
+.st-hero__card-icon {
+  font-size: 20px;
+  margin-bottom: 8px;
+  margin-top: 4px;
+}
+
+/* 
+   HERO CARD TITLE
+
+   Styles the card heading.
+*/
+
+/*The text inside the 3 boxes (Specialization, Book now, Support plan)*/
+.st-hero__card-title {
+  font-size: 12px;
+  font-weight: 800;
+  color: #2d2d2d;
+  margin-bottom: 4px;
+  white-space: normal;
+}
+
+/* 
+   HERO CARD DESCRIPTION
+
+   Styles the small text inside the hero cards.
+*/
+
+/*The text inside the 3 boxes  under the icon */
+.st-hero__card-desc {
+  font-size: 12px;
+  color: #6b6b6b;
+  line-height: 1;
+  margin: 0;
+  white-space: normal;
+}
+
+/* 
+   MAIN TEACHERS SECTION
+
+   Contains the section title, search bar, teachers grid, and pagination.
+*/
+
+/* Background color of the second section in the shadow teacher page */
+.st-section {
+  padding: 48px 48px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #F9F5F2;
+  margin-top: 30px;
+}
+
+/* 
+   SECTION TITLE
+
+   Styles the main heading above the teacher cards.
+*/
+
+/* The text : "Personalized support; exceptional progress" */
+.st-section__title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #2d2d2d;
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+/* 
+   TEACHERS GRID
+
+   Creates a 3-column layout for teacher cards.
+*/
+.st-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  width: 100%;
+  max-width: 1100px;
+}
+
+/* 
+   TEACHER CARD
+
+   Styles each teacher card.
+   The card uses row layout: image on the left, info on the right.
+*/
+
+/* The background color of the teacher cards */
+.st-card {
+  background: #f3e8ff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+  display: flex;
+  flex-direction: row;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  align-items: stretch;
+  min-height: 200px;
+}
+
+/* 
+   CARD BACKGROUND COLORS
+
+   Gives the first few cards different pastel backgrounds.
+*/
+.st-card:nth-child(1) {
+  background: #f3e8ff;
+}
+
+.st-card:nth-child(2) {
+  background: #e0e7ff;
+}
+
+.st-card:nth-child(3) {
+  background: #dbeafe;
+}
+
+.st-card:nth-child(4) {
+  background: #dcfce7;
+}
+
+/* 
+   TEACHER CARD HOVER
+
+   Adds a small lift effect when hovering on a card.
+*/
+.st-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* 
+   TEACHER IMAGE WRAPPER
+
+   Controls the image size inside each card.
+*/
+.st-card__img-wrap {
+  width: 140px;
+  flex-shrink: 0;
+  overflow: hidden;
+  height: 100%;
+  min-height: 160px;
+  align-self: stretch;
+}
+
+/* 
+   TEACHER IMAGE
+
+   Makes the teacher image fill its wrapper neatly.
+*/
+.st-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 
+   TEACHER CARD BODY
+
+   Contains teacher name, qualification, experience, rating, and button.
+*/
+.st-card__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  padding: 14px 16px;
+  gap: 6px;
+  justify-content: space-between;
+}
+
+/* 
+   TEACHER NAME
+
+   Keeps the name on one line and cuts it with ellipsis if too long.
+*/
+
+/* The text: name of the teachers in the card */
+.st-card__name {
+  font-size: 15px;
+  font-weight: 700;
+  color: #2d2d2d;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 
+   TEACHER QUALIFICATION
+
+   Styles the teacher qualification text.
+*/
+
+/* The text: qualification of the teachers in the card */
+.st-card__title {
+  font-size: 12px;
+  color: #7B5CBF;
+  font-weight: 500;
+  overflow: hidden;
+}
+
+/* 
+   TEACHER EXPERIENCE
+
+   Styles the years of experience text.
+*/
+
+/* The text: experience years of the teachers in the card */
+.st-card__years {
+  font-size: 11px;
+  color: #6b6b6b;
+  font-weight: 500;
+}
+
+/* 
+   STAR RATING CONTAINER
+
+   Controls the spacing between stars.
+*/
+.st-stars {
+  display: flex;
+  gap: 2px;
+  margin: 2px 0;
+}
+
+/* 
+   EMPTY STAR STYLE
+
+   Default star color before it is filled.
+*/
+
+/* The empty star */
+.st-star {
+  font-size: 12px;
+  color: #ddd;
+}
+
+/* 
+   FILLED STAR STYLE
+
+   Color for active rating stars.
+*/
+
+/* The filled star */
+.st-star--filled {
+  color: #f5a623;
+}
+
+/* 
+   BOOK BUTTON
+
+   Styles the button inside each teacher card.
+*/
+.st-card__btn {
+  margin-top: 4px;
+  background: #9CCFC9;
+  color: #2d2d2d;
+  border: none;
+  border-radius: 20px;
+  padding: 6px 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  width: 100%;
+}
+
+/* 
+   BOOK BUTTON HOVER
+
+   Changes the button color slightly on hover.
+*/
+.st-card__btn:hover {
+  background: #7bbfb8;
+}
+
+/* 
+   PAGINATION CONTAINER
+
+   Holds the previous arrow, page dots, and next arrow.
+*/
+.st-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+/* 
+   PAGINATION ARROWS
+
+   Styles the left and right arrow buttons.
+*/
+.st-pagination__arrow {
+  background: transparent;
+  border: none;
+  color: #9b948d;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0 4px;
+  line-height: 1;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 
+   PAGINATION ARROW HOVER
+
+   Makes the arrow purple and slightly larger on hover.
+*/
+.st-pagination__arrow:hover {
+  color: #7B5CBF;
+  transform: scale(1.08);
+}
+
+/* 
+   PAGINATION DOT
+
+   Represents each page as a small circle.
+*/
+.st-pagination__dot {
+  width: 8px;
+  height: 8px;
+  min-height: 8px;
+  max-height: 8px;
+  border-radius: 50%;
+  background: #c9c3bb;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+
+/* 
+   ACTIVE PAGINATION DOT
+
+   Shows the currently selected page.
+*/
+.st-pagination__dot--active {
+  background: #7B5CBF;
+}
+
+/* 
+   ABOUT / BENEFITS SECTION
+
+   Shows the benefits text with two images and background circles.
+*/
+
+/* The blue background color of the last section in the shadow teacher page */
+.st-about {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fbf8f5;
+  min-height: 400px;
+  overflow: hidden;
+  padding: 60px 20px;
+}
+
+/* 
+   LEFT BACKGROUND CIRCLE
+
+   Decorative green circle behind the left image.
+*/
+
+/* The light blue background circle behind the left image in the shadow teacher page */
+.st-about__bg-curve {
+  position: absolute;
+  left: -180px;
+  top: -150px;
+  width: 480px;
+  height: 480px;
+  background: #b8d9cc;
+  border-radius: 50%;
+  z-index: 0;
+  opacity: 0.9;
+}
+
+/* 
+   RIGHT BACKGROUND CIRCLE
+
+   Decorative green circle on the right side.
+*/
+
+/* The light blue background circle on the right side of the shadow teacher page */
+.st-about::after {
+  content: "";
+  position: absolute;
+  right: -180px;
+  bottom: -150px;
+  width: 480px;
+  height: 480px;
+  background: #b8d9cc;
+  border-radius: 50%;
+  z-index: 0;
+  opacity: 0.9;
+}
+
+/* 
+   ABOUT IMAGE WRAPPER
+
+   Styles the benefit images.
+*/
+.st-about__img-wrap {
+  position: relative;
+  z-index: 2;
+  width: 280px;
+  height: 200px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  margin: 0;
+  transform: translateX(-40px);
+}
+
+/* 
+   RIGHT ABOUT IMAGE
+
+   Moves the right image slightly inward.
+*/
+.st-about__img-wrap--right {
+  transform: translateX(40px);
+  position: relative;
+  right: auto;
+  top: auto;
+}
+
+/* 
+   ABOUT IMAGE
+
+   Makes the benefit image fill the image card.
+*/
+.st-about__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 
+   ABOUT CONTENT
+
+   Holds the benefits title and list.
+*/
+.st-about__content {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  min-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 40px;
+}
+
+/* 
+   ABOUT TITLE
+
+   Styles the benefits section heading.
+*/
+
+/* Text: "Benefits of having a shadow teacher" in the last section of the shadow teacher page */
+.st-about__title {
+  font-size: 26px;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin: 0 auto 30px;
+  line-height: 1.2;
+  text-align: center;
+}
+
+/* 
+   BENEFITS LIST
+
+   Displays benefits in two columns on desktop.
+*/
+.st-about__list {
+  list-style: disc;
+  margin-top: 16px;
+  padding-left: 22px;
+  width: 100%;
+  max-width: 600px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(180px, 1fr));
+  column-gap: 28px;
+  row-gap: 10px;
+}
+
+/* 
+   BENEFIT ITEM
+
+   Styles each bullet point in the benefits list.
+*/
+
+/* Text: the bullet list of the benefits section */
+.st-about__item {
+  font-size: 15px;
+  color: #333333;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+/* 
+   RESPONSIVE DESIGN FOR MEDIUM SCREENS
+
+   Adjusts layout for tablets and smaller desktop screens.
+*/
+@media (max-width: 1100px) {
+  .st-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    max-width: 100%;
+  }
+
+  .st-about {
+    gap: 32px;
+    padding-right: 32px;
+  }
+
+  .st-about__bg-curve {
+    left: -160px;
+    top: -140px;
+    width: 420px;
+    height: 420px;
+  }
+
+  .st-about::after {
+    right: -160px;
+    top: -140px;
+    width: 420px;
+    height: 420px;
+  }
+
+  .st-about__img-wrap {
+    margin-left: 40px;
+  }
+}
+
+/* 
+   RESPONSIVE DESIGN FOR SMALL TABLETS
+
+   Makes the benefits section stack vertically
+   and adjusts hero cards and teacher grid.
+*/
+@media (max-width: 900px) {
+  .st-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .st-about {
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: auto;
+    padding: 40px 24px;
+    gap: 28px;
+  }
+
+  .st-about__img-wrap--right {
+    display: none;
+  }
+
+  .st-about__bg-curve {
+    left: -120px;
+    top: -100px;
+    width: 360px;
+    height: 360px;
+  }
+
+  .st-about::after {
+    right: -120px;
+    top: -100px;
+    width: 360px;
+    height: 360px;
+  }
+
+  .st-about__img-wrap {
+    width: 220px;
+    height: 180px;
+    margin-left: 24px;
+    margin-top: 8px;
+  }
+
+  .st-about__content {
+    max-width: 100%;
+  }
+
+  .st-hero__cards {
+    gap: 16px;
+    padding: 0 24px;
+  }
+
+  .st-hero__card {
+    width: 160px;
+    padding: 18px 16px;
+  }
+
+  .st-section {
+    padding: 40px 24px;
+  }
+}
+
+/* 
+   RESPONSIVE DESIGN FOR MOBILE
+
+   Converts the layout to fit small phone screens.
+*/
+@media (max-width: 600px) {
+  .st-hero__main {
+    height: 260px;
+  }
+
+  .st-section {
+    padding: 32px 16px;
+  }
+
+  .st-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    max-width: 100%;
+  }
+
+  .st-hero__cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    padding: 0 12px;
+    margin-top: -30px;
+  }
+
+  .st-hero__card {
+    width: calc(33.333% - 6px);
+    min-width: 100px;
+    padding: 10px 4px;
+    border-radius: 8px;
+  }
+
+  .st-hero__card-icon {
+    font-size: 16px;
+    margin-bottom: 4px;
+    margin-top: 0;
+  }
+
+  .st-hero__card-title {
+    font-size: 10px;
+    margin-bottom: 2px;
+  }
+
+  .st-hero__card-desc {
+    font-size: 9px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .st-about {
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 24px 24px;
+    gap: 20px;
+  }
+
+  .st-about::after,
+  .st-about__bg-curve {
+    display: none;
+  }
+
+  .st-about__img-wrap {
+    width: 100%;
+    max-width: 280px;
+    height: 160px;
+    margin-left: 0;
+    margin-top: 0;
+    align-self: center;
+    border-radius: 12px;
+  }
+
+  .st-about__img-wrap--right {
+    display: none;
+  }
+
+  .st-about__title {
+    font-size: 18px;
+  }
+
+  .st-about__item {
+    font-size: 13px;
+  }
+
+  .st-about__list {
+    grid-template-columns: 1fr;
+  }
+
+  .st-card {
+    flex-direction: row;
+    min-height: 130px;
+    border-radius: 12px;
+  }
+
+  .st-card__img-wrap {
+    width: 100px;
+    height: auto;
+    min-height: 130px;
+  }
+
+  .st-card__body {
+    padding: 12px;
+    gap: 4px;
+  }
+
+  .st-card__name {
+    font-size: 14px;
+  }
+
+  .st-card__title {
+    font-size: 11px;
+  }
+
+  .st-card__years {
+    font-size: 10px;
+  }
+
+  .st-star {
+    font-size: 10px;
+  }
+
+  .st-card__btn {
+    font-size: 10px;
+    padding: 5px 0;
+    margin-top: 6px;
+  }
+}

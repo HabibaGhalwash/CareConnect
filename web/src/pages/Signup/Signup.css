@@ -1,0 +1,129 @@
+/* ────────────────────────────────────────────────────
+   Signup.css — CareConnect Sign Up Page
+   Color palette (from project files):
+     Purple primary:  #9D64AA
+     Purple dark:     #7B4A87
+     Purple deeper:   #5C1F7A  (dark circle)
+     Lavender hero:   #C8A8D4  (background)
+     Background:      #F6F2EE
+     Text dark:       #2d2d2d
+     Text gray:       #6b6b6b
+──────────────────────────────────────────────────── */
+
+.signup-page {
+    font-family: 'Poppins', sans-serif;
+    background: #F6F2EE;
+    color: #2d2d2d;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.signup-hero {
+    background: #C4A0CC;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 44px 44px 44px 0;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: visible;
+    min-height: 620px;
+}
+
+.signup-hero__content {
+    width: 100%;
+    max-width: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transform: scale(0.9);
+    transform-origin: left center;
+}
+
+.signup-hero__left {
+    flex: 0 0 52%;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    align-self: stretch;
+}
+
+.signup-hero__image-panel {
+    width: 646px;
+    height: 500px;
+    position: absolute;
+    left: -7px;
+    top: 50%;
+    bottom: auto;
+    transform: translateY(-50%);
+    border-radius: 0 239px 239px 0;
+    background: var(--signup-image) lightgray 5.16px -1.952px / 100% 135.902% no-repeat;
+}
+
+.signup-hero__right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-left: auto;
+    padding-right: 28px;
+    width: 552px;
+    flex: 0 0 auto;
+    z-index: 2;
+    position: relative;
+}
+
+@media (max-width: 1024px) {
+    .signup-hero {
+        padding: 40px 24px;
+        min-height: auto;
+    }
+
+    .signup-hero__content {
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+        transform: scale(1);
+    }
+
+    .signup-hero__left {
+        flex: none;
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    .signup-hero__image-panel {
+        position: relative;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        transform: translateY(0);
+        width: 100%;
+        max-width: 646px;
+        height: 280px;
+        border-radius: 24px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .signup-hero__right {
+        width: 100%;
+        max-width: 552px;
+        justify-content: center;
+        margin-left: 0;
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 540px) {
+    .signup-hero {
+        padding: 32px 16px;
+    }
+
+    .signup-hero__right {
+        width: 100%;
+    }
+}

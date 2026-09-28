@@ -1,0 +1,138 @@
+/* ── SchoolCard ──────────────────────────────────── */
+.school-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  flex: 1;
+  min-width: 220px;
+  max-width: 290px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.school-card:hover {
+  transform: translateY(-6px);
+}
+
+/* ── Photo ─────────────────────────────────────── */
+.school-card__img-wrap {
+  border-radius: 28px;
+  overflow: hidden;
+  aspect-ratio: 3 / 3.2;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
+  transition: box-shadow 0.3s ease;
+  flex-shrink: 0;
+}
+
+.school-card:hover .school-card__img-wrap {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+}
+
+.school-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Rounded rectangle bubble ─────────────────────
+   Pulled up so it overlaps the photo bottom        */
+.school-card__bubble {
+  background: #ffffff;
+  border-radius: 28px;
+  padding: 22px 20px;
+  margin-top: -50px;
+  z-index: 2;
+  position: relative;
+  min-height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 86%;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* ── School name ───────────────────────────────── */
+.school-card__name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  color: #1a1a1a;
+  line-height: 1.3;
+  text-align: center;
+}
+
+/* ── Responsive ───────────────────────────────────── */
+@media (max-width: 1024px) {
+  .school-card {
+    max-width: 260px;
+  }
+
+  .school-card__bubble {
+    padding: 18px 16px;
+    border-radius: 20px;
+  }
+
+  .school-card__name {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .school-card {
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  .school-card__bubble {
+    padding: 16px 14px;
+    margin-top: -40px;
+    border-radius: 20px;
+  }
+
+  .school-card__name {
+    font-size: 14px;
+  }
+
+  .school-card__img-wrap {
+    border-radius: 20px;
+    aspect-ratio: 16 / 12;
+  }
+}
+
+@media (max-width: 480px) {
+  .school-card__bubble {
+    padding: 14px 12px;
+    margin-top: -30px;
+    border-radius: 16px;
+    min-height: 80px;
+  }
+
+  .school-card__name {
+    font-size: 13px;
+  }
+
+  .school-card__img-wrap {
+    border-radius: 16px;
+    aspect-ratio: 16 / 12;
+  }
+}
+
+@media (max-width: 360px) {
+  .school-card__bubble {
+    padding: 12px 10px;
+    margin-top: -25px;
+    border-radius: 14px;
+    min-height: 70px;
+  }
+
+  .school-card__name {
+    font-size: 12px;
+  }
+
+  .school-card__img-wrap {
+    border-radius: 14px;
+  }
+}

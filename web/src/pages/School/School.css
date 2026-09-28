@@ -1,0 +1,353 @@
+/* 
+   SCHOOL PAGE WRAPPER
+
+   Removes extra top spacing from the page.
+*/
+.school-page {
+  padding-top: 0;
+}
+
+/* 
+   SEARCH SECTION
+
+   Centers the search bar inside a beige area.
+*/
+.school-search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  background: #EEE9E2;
+}
+
+/* 
+   SEARCH BOX
+
+   Wrapper for the input and search icon.
+   position: relative allows the icon to sit inside the input area.
+*/
+.search-box {
+  width: 80%;
+  max-width: 800px;
+  position: relative;
+}
+
+/* 
+   SEARCH INPUT
+
+   Main input where users type school name or program.
+*/
+.search-box input {
+  width: 100%;
+  padding: 18px 50px 18px 24px;
+  border-radius: 50px;
+  border: 2px solid #d1c7bf;
+  font-size: 14px;
+  outline: none;
+  background: white;
+}
+
+/* 
+   SEARCH ICON BUTTON
+
+   Places the search icon on the right side inside the input.
+*/
+.search-btn {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+}
+
+/* 
+   SCHOOL SECTION
+
+   One full-width section for each school result.
+*/
+.school-section {
+  width: 100%;
+  padding: 70px 0px;
+  display: flex;
+  justify-content: center;
+}
+
+/* 
+   BEIGE BACKGROUND
+
+   Used for alternating school sections.
+*/
+.bg-beige {
+  background: #EEE9E2;
+}
+
+/* 
+   WHITE BACKGROUND
+
+   Used for alternating school sections.
+*/
+.bg-white {
+  background: #F9F5F2;
+}
+
+/* 
+   SCHOOL ITEM
+
+   Main layout for one school row.
+   Contains the image and information side by side.
+*/
+.school-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  padding: 0 60px;
+}
+
+/* 
+   REVERSED SCHOOL ITEM
+
+   Flips image and text direction for alternating layout.
+*/
+.school-item.reverse {
+  flex-direction: row-reverse;
+}
+
+/* 
+   SCHOOL IMAGE
+
+   Large rounded image with a curved right side.
+*/
+.school-item img {
+  width: 600px;
+  height: auto;
+  aspect-ratio: 420/300;
+  object-fit: cover;
+  border-radius: 0 250px 250px 0;
+  flex-shrink: 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin-left: -60px;
+}
+
+/* 
+   REVERSED SCHOOL IMAGE
+
+   Curves the opposite side when the layout is reversed.
+*/
+.school-item.reverse img {
+  border-radius: 250px 0 0 250px;
+  margin-left: 0;
+  margin-right: -60px;
+}
+
+/* 
+   SCHOOL INFO
+
+   Text area that contains school name, aim, address,
+   website link, and rating.
+*/
+.school-info {
+  flex: 1;
+  padding-left: 320px;
+}
+
+/* 
+   REVERSED SCHOOL INFO
+
+   Adjusts spacing when the school item is reversed.
+*/
+.school-item.reverse .school-info {
+  padding-left: 0;
+  padding-right: 320px;
+}
+
+/* 
+   SCHOOL NAME
+
+   Main school title.
+*/
+.school-info h2 {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+/* 
+   SCHOOL DETAILS TEXT
+
+   Paragraphs for aim, address, and website.
+*/
+.school-info p {
+  font-size: 16px;
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+/* 
+   SCHOOL WEBSITE LINK
+
+   Green clickable website link.
+*/
+.school-info a {
+  color: #10b981;
+  text-decoration: none;
+}
+
+/* 
+   SCHOOL WEBSITE LINK HOVER
+
+   Underlines the website link on hover.
+*/
+.school-info a:hover {
+  text-decoration: underline;
+}
+
+/* 
+   STARS WRAPPER
+
+   Holds the star rating and rating text.
+*/
+.stars {
+  margin-top: 12px;
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* 
+   SINGLE STAR
+
+   Shared styling for filled and empty stars.
+*/
+.star {
+  display: inline-block;
+  line-height: 1;
+  transition: all 0.2s ease;
+  cursor: default;
+}
+
+/* 
+   FILLED STAR
+
+   Yellow star for active rating.
+*/
+.star.filled {
+  color: #fbbf24;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* 
+   EMPTY STAR
+
+   Gray star for missing rating points.
+*/
+.star.empty {
+  color: #d1d5db;
+}
+
+/* 
+   RATING TEXT
+
+   Shows numeric rating like (4/5).
+*/
+.rating-text {
+  font-size: 14px;
+  margin-left: 8px;
+  color: #666;
+  font-weight: 600;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* 
+   RESPONSIVE DESIGN FOR MEDIUM DESKTOP
+
+   Reduces large gaps and image size.
+*/
+@media (max-width: 1200px) {
+  .school-item {
+    gap: 40px;
+  }
+
+  .school-info {
+    padding-left: 40px;
+  }
+
+  .school-item.reverse .school-info {
+    padding-right: 40px;
+  }
+
+  .school-item img {
+    width: 450px;
+  }
+}
+
+/* 
+   RESPONSIVE DESIGN FOR TABLETS
+
+   Stacks image and text vertically.
+   Changes image to normal rounded rectangle.
+*/
+@media (max-width: 960px) {
+
+  .school-item,
+  .school-item.reverse {
+    flex-direction: column;
+    gap: 32px;
+    padding: 0 32px;
+  }
+
+  .school-item img,
+  .school-item.reverse img {
+    width: 100%;
+    max-width: 600px;
+    margin: 0;
+    border-radius: 24px;
+    aspect-ratio: 16/9;
+  }
+
+  .school-info,
+  .school-item.reverse .school-info {
+    padding: 0;
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .school-section {
+    padding: 48px 0;
+  }
+}
+
+/* 
+   RESPONSIVE DESIGN FOR MOBILE
+
+   Reduces spacing, text sizes, and star size.
+*/
+@media (max-width: 600px) {
+
+  .school-item,
+  .school-item.reverse {
+    padding: 0 20px;
+  }
+
+  .school-info h2 {
+    font-size: 20px;
+  }
+
+  .school-info p {
+    font-size: 14px;
+  }
+
+  .school-section {
+    padding: 32px 0;
+  }
+
+  .stars {
+    font-size: 24px;
+  }
+
+  .search-box {
+    width: 95%;
+  }
+}

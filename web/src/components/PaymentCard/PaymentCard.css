@@ -1,0 +1,461 @@
+/* ── PaymentCard.css ──────────────────────────────────── */
+
+/* Outer right panel */
+.pc {
+  flex: 0 0 50%;
+  background: #EDE9E3;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 24px 20px 24px;
+  box-sizing: border-box;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+/* Step indicator */
+.pc__step {
+  font-family: 'Poppins', sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  color: #9D64AA;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin: 0 0 6px;
+}
+
+/* Page title */
+.pc__title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #2d2d2d;
+  margin: 0 0 2px;
+}
+
+.pc__subtitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  color: #888;
+  margin: 0 0 14px;
+}
+
+/* ── Tab switcher ─────────────────────────────────── */
+.pc__tabs {
+  display: flex;
+  background: #E4DED6;
+  border-radius: 12px;
+  padding: 4px;
+  gap: 3px;
+  margin-bottom: 14px;
+}
+
+.pc__tab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 7px 10px;
+  border-radius: 9px;
+  border: none;
+  background: transparent;
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  color: #888;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+}
+
+.pc__tab--active {
+  background: #ffffff;
+  color: #2d2d2d;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.pc__tab-icon {
+  font-size: 13px;
+  line-height: 1;
+}
+
+/* ── Credit card visual ───────────────────────────── */
+.pc__card-visual {
+  background: linear-gradient(135deg, #9D64AA 0%, #7B4A87 55%, #C47DCC 100%);
+  border-radius: 14px;
+  padding: 16px 18px 14px;
+  margin-bottom: 14px;
+  position: relative;
+  overflow: hidden;
+  min-height: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 6px 20px rgba(157, 100, 170, 0.25);
+}
+
+/* Decorative circles on card */
+.pc__card-visual::before {
+  content: '';
+  position: absolute;
+  right: -25px;
+  top: -25px;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.pc__card-visual::after {
+  content: '';
+  position: absolute;
+  right: 30px;
+  bottom: -40px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* Chip */
+.pc__card-chip {
+  width: 32px;
+  height: 24px;
+  background: linear-gradient(135deg, #e8c840, #c8a800);
+  border-radius: 5px;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Card number dots */
+.pc__card-number {
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.75);
+  letter-spacing: 3px;
+  margin-bottom: 14px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Card bottom row */
+.pc__card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  z-index: 1;
+}
+
+.pc__card-info-label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 8px;
+  color: rgba(255, 255, 255, 0.55);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  margin: 0 0 1px;
+}
+
+.pc__card-info-value {
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+}
+
+/* Mastercard logo circles */
+.pc__mastercard {
+  display: flex;
+  align-items: center;
+}
+
+.pc__mastercard-circle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+.pc__mastercard-circle:first-child {
+  background: #eb001b;
+  margin-right: -10px;
+}
+
+.pc__mastercard-circle:last-child {
+  background: #f79e1b;
+  opacity: 0.9;
+}
+
+/* ── Form fields ──────────────────────────────────── */
+.pc__form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.pc__field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.pc__field-label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.pc__input {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 9px 11px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  color: #2d2d2d;
+  outline: none;
+  transition: border-color 0.18s, box-shadow 0.18s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.pc__input:focus {
+  border-color: #9D64AA;
+  box-shadow: 0 0 0 3px rgba(157, 100, 170, 0.12);
+}
+
+.pc__input::placeholder {
+  color: #bbb;
+}
+
+.pc__input--error {
+  border-color: #e05252;
+}
+
+/* Row for expiry + cvv */
+.pc__field-row {
+  display: flex;
+  gap: 10px;
+}
+
+.pc__field-row .pc__field-group {
+  flex: 1;
+}
+
+/* Error text */
+.pc__error {
+  font-family: 'Poppins', sans-serif;
+  font-size: 10px;
+  color: #e05252;
+  margin-top: 2px;
+}
+
+/* ── Security note ────────────────────────────────── */
+.pc__security {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 12px;
+}
+
+.pc__security-icon {
+  font-size: 12px;
+  color: #9D64AA;
+}
+
+.pc__security-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 10px;
+  color: #999;
+}
+
+/* ── Pay button ───────────────────────────────────── */
+.pc__pay-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px;
+  background: #9D64AA;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+  letter-spacing: 0.2px;
+}
+
+.pc__pay-btn:hover {
+  background: #7B4A87;
+  transform: translateY(-1px);
+}
+
+.pc__pay-btn:active {
+  transform: translateY(0);
+}
+
+.pc__pay-btn-icon {
+  display: flex;
+  align-items: center;
+}
+
+/* Terms */
+.pc__terms {
+  font-family: 'Poppins', sans-serif;
+  font-size: 10px;
+  color: #bbb;
+  text-align: center;
+  margin-top: 8px;
+}
+
+.pc__terms a {
+  color: #9D64AA;
+  text-decoration: none;
+}
+
+.pc__terms a:hover {
+  text-decoration: underline;
+}
+
+/* ── Instapay panel ───────────────────────────────── */
+.pc__instapay-panel {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  border: 1px dashed #e0d6f0;
+}
+
+.pc__instapay-icon-wrap {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #F8F5FB;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+
+.pc__instapay-icon-wrap svg {
+  width: 22px;
+  height: 22px;
+  stroke: #9D64AA;
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.pc__instapay-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #2d2d2d;
+  margin: 0;
+}
+
+.pc__instapay-send {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  color: #888;
+  margin: 0;
+}
+
+.pc__instapay-send strong {
+  color: #2d2d2d;
+  font-weight: 700;
+}
+
+.pc__instapay-address {
+  background: #F8F5FB;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #7B4A87;
+}
+
+.pc__instapay-note {
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  color: #aaa;
+  margin: 0;
+}
+
+/* ── I've Sent the Payment button ─────────────────── */
+.pc__sent-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #9D64AA, #7B4A87);
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.15s;
+  margin-bottom: 4px;
+}
+
+.pc__sent-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* ── Success state ────────────────────────────────── */
+.pc--success {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.pc__success-icon {
+  font-size: 40px;
+  margin-bottom: 12px;
+}
+
+.pc__success-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #2d2d2d;
+  margin: 0 0 8px;
+}
+
+.pc__success-sub {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  color: #888;
+  line-height: 1.5;
+  margin: 0;
+  max-width: 280px;
+}
+
+/* ── Responsive ───────────────────────────────────── */
+@media (max-width: 860px) {
+  .pc {
+    padding: 20px 16px;
+    min-height: auto;
+  }
+}

@@ -1,0 +1,155 @@
+/* ── TherapistCard ───────────────────────────────── */
+.therapist-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+  transition: width 0.35s ease-in-out, height 0.35s ease-in-out, box-shadow 0.25s, transform 0.25s;
+  will-change: width, height;
+}
+
+.therapist-card:hover {
+  width: 200px;
+  height: 280px;
+  transform: scale(1);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+/* Hide hover effect for featured cards */
+.therapist-card--featured:hover {
+  width: 180px;
+  height: 260px;
+  transform: scale(1.08);
+}
+
+/* ── Default (side) card - thin ─────────────────────────────── */
+.therapist-card {
+  width: 120px;
+  height: 180px;
+}
+
+/* ── Expand on hover ────────────────────────────────────────── */
+.therapist-card:not(.therapist-card--featured):hover {
+  width: 200px;
+  height: 280px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+  z-index: 20;
+}
+
+/* ── Featured (center) card ─────────────────────────────────── */
+.therapist-card--featured {
+  width: 220px;
+  height: 320px;
+  z-index: 2;
+}
+
+/* ── Photo ───────────────────────────────────────── */
+.therapist-card__photo {
+  width: 100%;
+  height: 100%;
+}
+
+.therapist-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.therapist-card__img-ph {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ── Featured info overlay ───────────────────────── */
+.therapist-card__info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(4px);
+  padding: 12px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.therapist-card__spec {
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: #2d2d2d;
+}
+
+.therapist-card__years {
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: #9D64AA;
+  white-space: nowrap;
+}
+
+/* ── Vertical specialization label - show only for featured cards and on hover ──────────────── */
+.therapist-card .therapist-card__vertical-label {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 24px;
+  background: rgba(123, 92, 191, 0.82);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Show vertical label for featured cards */
+.therapist-card--featured .therapist-card__vertical-label {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Show on hover for all cards - but hide for featured */
+.therapist-card:hover .therapist-card__vertical-label {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.2s ease 0.05s, visibility 0.2s ease 0.05s;
+}
+
+/* Hide purple label on hover for featured cards */
+.therapist-card--featured:hover .therapist-card__vertical-label {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.therapist-card .therapist-card__vertical-label span {
+  font-family: 'Poppins', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  color: #fff;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}

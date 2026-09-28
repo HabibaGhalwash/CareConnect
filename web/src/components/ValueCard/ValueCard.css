@@ -1,0 +1,45 @@
+/* ── ValueCard ────────────────────────────────────── */
+.value-card {
+  border-radius: 18px;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  flex: 1;
+  min-width: 200px;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.value-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.value-card__icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #9D64AA;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.value-card__title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: #2d2d2d;
+  margin: 0;
+}
+
+.value-card__desc {
+  font-family: 'Poppins', sans-serif;
+  font-size: 13.5px;
+  color: #6b6b6b;
+  line-height: 1.65;
+  margin: 0;
+}

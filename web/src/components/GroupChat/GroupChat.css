@@ -1,0 +1,501 @@
+/* ── GroupChat ────────────────────────────────────── */
+.gc {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    border-left: 1px solid #e8e3dd;
+    border-right: 1px solid #e8e3dd;
+    min-width: 0;
+    height: 100%;
+}
+
+/* Header */
+.gc__header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 24px;
+    border-bottom: 1px solid #ede9e3;
+    flex-shrink: 0;
+}
+
+.gc__header-icon {
+    display: flex;
+    align-items: center;
+    color: #2d2d2d;
+}
+
+.gc__header-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #2d2d2d;
+    margin: 0;
+}
+
+/* ── Message thread ──────────────────────────────── */
+.gc__messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px 20px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    scrollbar-gutter: stable;
+}
+
+/* Scrollbar */
+.gc__messages::-webkit-scrollbar {
+    width: 4px;
+}
+
+.gc__messages::-webkit-scrollbar-thumb {
+    background: #e0dbd4;
+    border-radius: 2px;
+}
+
+/* Message group (one sender, possibly multiple bubbles) */
+.gc__msg-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    max-width: 70%;
+}
+
+.gc__msg-group--me {
+    align-self: flex-end;
+    align-items: flex-end;
+}
+
+.gc__msg-group--them {
+    align-self: flex-start;
+    align-items: flex-start;
+}
+
+/* Meta row (avatar + name) */
+.gc__msg-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+}
+
+.gc__msg-meta--me {
+    flex-direction: row-reverse;
+}
+
+/* Avatar */
+.gc__avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.gc__avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.gc__avatar-ph {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+}
+
+/* Sender name */
+.gc__sender-name {
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: #2d2d2d;
+}
+
+/* Bubbles container */
+.gc__bubbles {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: flex-start;
+}
+
+.gc__bubbles--me {
+    align-items: flex-end;
+}
+
+/* ── Bubble ───────────────────────────────────────── */
+.gc__bubble {
+    padding: 10px 16px;
+    border-radius: 18px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13.5px;
+    line-height: 1.5;
+    max-width: 340px;
+    word-break: break-word;
+}
+
+/* Others' bubbles — mint/teal */
+.gc__bubble--them {
+    background: #9CCFC9;
+    color: #2d2d2d;
+    border-bottom-left-radius: 4px;
+}
+
+/* My bubbles — also mint (matching design) */
+.gc__bubble--me {
+    background: #9CCFC9;
+    color: #2d2d2d;
+    border-bottom-right-radius: 4px;
+}
+
+/* ── Audio bubble ─────────────────────────────────── */
+.gc__bubble--audio {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    min-width: 160px;
+    max-width: 280px;
+}
+
+.gc__play-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2d2d2d;
+    flex-shrink: 0;
+    transition: background 0.15s;
+}
+
+.gc__play-btn:hover {
+    background: rgba(255, 255, 255, 0.85);
+}
+
+.gc__waveform {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    flex: 1;
+}
+
+.gc__wave-bar {
+    width: 2.5px;
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 2px;
+    min-height: 4px;
+}
+
+.gc__audio-time {
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.9);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* ── Input bar ────────────────────────────────────── */
+.gc__input-bar {
+    display: flex;
+    align-items: center;
+    margin: 12px 16px 16px;
+    background: #ffffff;
+    border: 1.5px solid #d8d3cc;
+    border-radius: 30px;
+    padding: 10px 16px;
+    gap: 10px;
+    flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.gc__input-icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    color: #aaa;
+    flex-shrink: 0;
+    transition: color 0.15s;
+}
+
+.gc__input-icon-btn:hover {
+    color: #9D64AA;
+}
+
+.gc__input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #2d2d2d;
+    min-width: 0;
+}
+
+.gc__input::placeholder {
+    color: #c0b8b0;
+    font-size: 14px;
+}
+
+.gc__mic-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: #9D64AA;
+    flex-shrink: 0;
+    padding: 0;
+    transition: color 0.15s, transform 0.15s;
+}
+
+.gc__mic-btn:hover {
+    color: #7B4A87;
+    transform: scale(1.05);
+}
+
+.gc__mic-wrap {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    border: 2px solid #1e3a5f;
+    border-radius: 8px;
+    flex-shrink: 0;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.gc__mic-wrap--recording {
+    border-color: #c0392b;
+    box-shadow: 0 0 0 2px rgba(192, 57, 43, 0.25);
+    animation: gc-rec-pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes gc-rec-pulse {
+    50% {
+        box-shadow: 0 0 0 4px rgba(192, 57, 43, 0.2);
+    }
+}
+
+.gc__mic-wrap .gc__mic-btn:hover {
+    transform: none;
+}
+
+/* Mic icon — sized via CSS so media queries can override */
+.gc__mic-icon {
+    width: 20px;
+    height: 20px;
+    display: block;
+}
+
+/* Hidden file input + off-DOM audio player */
+.gc__file-input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.gc__audio-element {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Attachments */
+.gc__bubble--media {
+    padding: 6px;
+    overflow: hidden;
+    max-width: min(340px, 85vw);
+}
+
+.gc__attach-img {
+    display: block;
+    max-width: 280px;
+    max-height: 220px;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.gc__bubble--file {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: inherit;
+    max-width: 280px;
+}
+
+.gc__bubble--file:hover {
+    filter: brightness(0.97);
+}
+
+.gc__file-icon {
+    flex-shrink: 0;
+}
+
+.gc__file-name {
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* ── Responsive ───────────────────────────────────── */
+@media (max-width: 768px) {
+    .gc__header {
+        padding: 14px 16px;
+    }
+    
+    .gc__header-title {
+        font-size: 15px;
+    }
+
+    /* More breathing room between messages */
+    .gc__messages {
+        padding: 16px 14px 12px;
+        gap: 20px;
+    }
+
+    /* Message groups shouldn't be wider than 85% of screen */
+    .gc__msg-group {
+        max-width: 85%;
+    }
+
+    /* Bubbles: fluid width, comfortable padding */
+    .gc__bubble {
+        max-width: min(75vw, 320px);
+        padding: 10px 14px;
+        font-size: 13.5px;
+        line-height: 1.6;
+        border-radius: 16px;
+    }
+
+    /* Audio bubbles: compact, not full-width */
+    .gc__bubble--audio {
+        min-width: 0;
+        width: auto;
+        max-width: min(65vw, 260px);
+        padding: 9px 12px;
+        gap: 8px;
+        box-sizing: border-box;
+    }
+
+    /* Play button: tighter on mobile */
+    .gc__play-btn {
+        width: 28px;
+        height: 28px;
+        flex-shrink: 0;
+    }
+
+    /* Waveform bars: compress gracefully */
+    .gc__waveform {
+        min-width: 0;
+        overflow: hidden;
+        flex: 1;
+    }
+
+    .gc__wave-bar {
+        width: 2px;
+    }
+
+    /* Audio timestamp */
+    .gc__audio-time {
+        font-size: 10px;
+        flex-shrink: 0;
+    }
+
+    /* Avatar: slightly smaller on mobile */
+    .gc__avatar {
+        width: 30px;
+        height: 30px;
+    }
+
+    /* Sender name */
+    .gc__sender-name {
+        font-size: 11px;
+    }
+
+    /* Input bar: comfortable but compact */
+    .gc__input-bar {
+        margin: 10px 12px 14px;
+        padding: 8px 12px;
+        gap: 8px;
+        border-radius: 24px;
+    }
+
+    /* Mic button wrap: smaller on mobile */
+    .gc__mic-wrap {
+        padding: 2px;
+        border-radius: 6px;
+    }
+
+    /* Mic icon: override inline size via CSS class */
+    .gc__mic-icon {
+        width: 16px;
+        height: 16px;
+    }
+    
+    .gc__input {
+        font-size: 13.5px;
+    }
+    
+    .gc__input::placeholder {
+        font-size: 13.5px;
+    }
+
+    /* Media attachments */
+    .gc__attach-img {
+        max-width: min(60vw, 240px);
+    }
+
+    .gc__bubble--media {
+        max-width: min(65vw, 260px);
+    }
+}
+
+/* Extra small screens (e.g. iPhone SE) */
+@media (max-width: 380px) {
+    .gc__bubble,
+    .gc__bubble--audio {
+        max-width: 80vw;
+        font-size: 13px;
+    }
+
+    .gc__messages {
+        padding: 12px 10px 10px;
+        gap: 18px;
+    }
+
+    .gc__msg-group {
+        max-width: 90%;
+    }
+}

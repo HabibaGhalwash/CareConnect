@@ -1,0 +1,202 @@
+/* ── AdminSidebar (matching ProviderSidebar design) ──── */
+.ads {
+  width: 220px;
+  min-width: 220px;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+/* Admin background el left part el purple*/
+.ads--admin {
+  background: #442E73;
+}
+
+/* ── Top (logo bar) ────────────────────────────── el left part bat3 careconnect el purple */
+.ads__top {
+  background: #7B5CBF;
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ads__logo-img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.ads__logo {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+/* ── Avatar area ───────────────────────────────── */
+.ads__avatar-area {
+  padding: 20px 0 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* el circle el purple el feha letters, you can change color of the letter and circle from here */
+.ads__avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  background: #A48CD6;
+}
+
+/* El color bat3 mmnh@gmail.com */
+.ads__name {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.4;
+  padding: 0 12px;
+}
+
+/*Super Administrator color el taht mmnh@gmail.com*/
+.ads__role {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 3px;
+  color: #A48CD6;
+}
+
+/* ── Nav ───────────────────────────────────────── */
+.ads__nav {
+  flex: 1;
+  padding: 8px 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.ads__nav::-webkit-scrollbar {
+  width: 3px;
+}
+
+.ads__nav::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/*EL klam on the left part mn awl el dashboard*/
+.ads__nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 20px;
+  cursor: pointer;
+  color: #C9C9C9;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: 'DM Sans', sans-serif;
+  transition: all 0.15s;
+  position: relative;
+  background: none;
+  border: none;
+  text-align: left;
+  width: 100%;
+}
+
+.ads__nav-item:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.ads__nav-item--active {
+  color: #fff;
+  font-weight: 600;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+
+.ads__nav-item--active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  border-radius: 0 3px 3px 0;
+  background: #9CCFC9;
+}
+
+/*Color of the icons on the left part sidebar */
+.ads__nav-icon-svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: currentColor;
+}
+
+.ads__nav-label {
+  white-space: nowrap;
+  flex: 1;
+}
+
+/*notifications color and the color of the number el fe sidebar*/
+.ads__nav-badge {
+  background: #ED5C5C;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 20px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+/* ── Logout that is down on the left part in the sidebar ────*/
+.ads__logout {
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 12px;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: none;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  text-align: left;
+  transition: color 0.15s;
+  width: 100%;
+}
+
+.ads__logout:hover {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.ads__logout-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  color: currentColor;
+}

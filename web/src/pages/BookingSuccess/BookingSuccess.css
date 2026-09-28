@@ -1,0 +1,140 @@
+.booking-success-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f6f2; /* Light cream/beige background */
+}
+
+.booking-success-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.success-card {
+  background: #ffffff;
+  max-width: 500px;
+  width: 100%;
+  padding: 60px 40px;
+  border-radius: 30px;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  animation: slideUp 0.6s ease-out;
+}
+
+.success-icon-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.success-icon-circle {
+  width: 90px;
+  height: 90px;
+  background: #A4D4B4; /* System Green/Mint */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(164, 212, 180, 0.4);
+  animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s both;
+}
+
+.success-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #2d2d2d;
+  margin-bottom: 15px;
+}
+
+.success-message {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  color: #666666;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.success-divider {
+  height: 1px;
+  background: #eeeeee;
+  margin: 30px 0;
+}
+
+.success-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.btn-primary {
+  background: #9D64AA; /* System Purple */
+  color: #ffffff;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 15px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #8c5399;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(157, 100, 170, 0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #9D64AA;
+  border: 2px solid #9D64AA;
+  padding: 13px 30px;
+  border-radius: 15px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: rgba(157, 100, 170, 0.05);
+  transform: translateY(-2px);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 480px) {
+  .success-card {
+    padding: 40px 25px;
+  }
+  
+  .success-title {
+    font-size: 26px;
+  }
+}

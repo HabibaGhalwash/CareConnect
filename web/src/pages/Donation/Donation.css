@@ -1,0 +1,169 @@
+/*color of the background in the donatations page*/
+.donation-page {
+  background-color: #f0ece6;
+  min-height: 100vh;
+  padding: 36px 0 60px;
+}
+
+.donation-page__container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/*Donation Center Color*/
+.donation-page__title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #2c2c2a;
+  margin: 0 0 20px;
+  letter-spacing: -0.3px;
+}
+
+/* ── Donate-an-item Banner ── Have an item to donate (the whole box color) */
+.donation-page__banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: #ffffff;
+  border: 1px solid #e1ddd6;
+  border-left: 4px solid #a375c3;
+  padding: 18px 24px;
+  margin-bottom: 28px;
+  border-radius: 0 8px 8px 0;
+}
+
+.donation-page__banner-text {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.donation-page__banner-icon {
+  font-size: 28px;
+  flex-shrink: 0;
+}
+
+/*have an item to donate (the text color and font size)*/
+.donation-page__banner-heading {
+  font-size: 15px;
+  font-weight: 700;
+  color: #2c2c2a;
+  margin: 0 0 2px;
+}
+
+/*have an item to donate (the color of the sentence below the heading)*/
+.donation-page__banner-sub {
+  font-size: 13px;
+  color: #7a756e;
+  margin: 0;
+}
+
+/*the color of the button (donate an Item)*/
+.donation-page__donate-btn {
+  background: #a375c3;
+  color: #ffffff;
+  border: none;
+  border-radius: 24px;
+  padding: 11px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.donation-page__donate-btn:hover {
+  background: #8f61b0;
+  transform: translateY(-1px);
+}
+
+.donation-page__donate-btn:active {
+  background: #76489b;
+  transform: translateY(0);
+}
+
+/* ── Grid ── */
+.donation-page__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px 36px;
+  margin-bottom: 36px;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .donation-page__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .donation-page__banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .donation-page__donate-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .donation-page__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Pagination ── */
+.donation-page__pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.pagination__arrow {
+  background: none;
+  border: none;
+  font-size: 26px;
+  color: #888780;
+  cursor: pointer;
+  padding: 0 4px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s;
+}
+
+.pagination__arrow:hover:not(:disabled) {
+  color: #2c2c2a;
+}
+
+.pagination__arrow:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.pagination__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: #c8c3bb;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.pagination__dot:hover {
+  background: #a09890;
+}
+
+.pagination__dot--active {
+  background: #7c6bbf;
+  transform: scale(1.2);
+}

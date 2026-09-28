@@ -1,0 +1,168 @@
+/* ── Communication Tool Page ─────────────────────── */
+/*The background colour of the commication tool page*/
+.comm-page {
+  min-height: 100vh;
+  background: #F6F2EE;
+  display: flex;
+  flex-direction: column;
+}
+
+.comm-section {
+  flex: 1;
+  padding: 100px 48px 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*the top text in the communication tool page*/
+.comm-section__title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: #2d2d2d;
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+/* ── Cards Grid ──────────────────────────────────── */
+.comm-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 200px);
+  gap: 16px;
+  justify-content: center;
+}
+
+.comm-card {
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  height: 200px;
+}
+
+.comm-card:hover {
+  transform: translateY(-3px);
+}
+
+/*The colors of the boxes in the communication tool page*/
+.comm-card--green {
+  background: #A8D8A8;
+}
+
+.comm-card--blue {
+  background: #9CCFC9;
+}
+
+.comm-card--light-blue {
+  background: #B8D8E8;
+}
+
+.comm-card--purple {
+  background: #C8B8E8;
+}
+
+.comm-card--teal {
+  background: #A8C8E8;
+}
+
+.comm-card--mint {
+  background: #B8E8D0;
+}
+
+.comm-card__image {
+  width: 100%;
+  flex: 1;
+  object-fit: cover;
+  object-position: center;
+}
+
+/*The text at the bottom of the boxes in the communication tool page*/
+.comm-card__label {
+  background: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+  padding: 10px 4px;
+  font-family: 'Poppins', sans-serif;
+  color: #2d2d2d;
+  letter-spacing: 0.3px;
+  margin-top: auto;
+}
+
+/* ── Pagination ──────────────────────────────────── */
+.comm-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.comm-pagination__arrow {
+  background: none;
+  border: none;
+  color: #6b6b6b;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 4px 8px;
+  transition: color 0.2s;
+  line-height: 1;
+}
+
+.comm-pagination__arrow:hover {
+  color: #9D64AA;
+}
+
+.comm-pagination__arrow:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.comm-pagination__dot {
+  width: 8px;
+  height: 8px;
+  min-height: 8px;
+  max-height: 8px;
+  border-radius: 50%;
+  background: #c9c3bb;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.comm-pagination__dot--active {
+  background: #9D64AA;
+}
+
+/* ── Responsive ──────────────────────────────────── */
+@media (max-width: 700px) {
+  .comm-grid {
+    grid-template-columns: repeat(3, minmax(90px, 120px));
+    gap: 10px;
+  }
+
+  .comm-card {
+    height: 130px;
+    border-radius: 10px;
+  }
+
+  .comm-section {
+    padding: 80px 16px 48px;
+  }
+
+  .comm-section__title {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .comm-card__label {
+    font-size: 10px;
+    padding: 6px 2px;
+    letter-spacing: 0;
+  }
+}

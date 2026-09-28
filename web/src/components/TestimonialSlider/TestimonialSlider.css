@@ -1,0 +1,258 @@
+/* ── TestimonialSlider ───────────────────────────── */
+
+/* Wrapper */
+.ts {
+  background: #ffffff;
+  padding: 56px clamp(16px, 4vw, 40px);
+  overflow: hidden;
+}
+
+.ts__inner {
+  width: 100%;
+  max-width: min(1400px, 100%);
+  margin: 0 auto;
+}
+
+/* Heading */
+.ts__heading {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.ts__title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: #2d2d2d;
+}
+
+/* Body */
+.ts__body {
+  position: relative;
+}
+
+/* Nav buttons */
+.ts__nav {
+  display: none;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.ts__nav-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.ts__nav-btn--active {
+  background: #ffffff;
+  color: #9D64AA;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ts__nav-btn--active:hover {
+  background: #f3effc;
+}
+
+.ts__nav-btn--disabled {
+  background: #ede9e3;
+  color: #c9c9c9;
+  cursor: not-allowed;
+}
+
+/* Track */
+.ts__overflow {
+  overflow: hidden;
+  position: relative;
+}
+
+.ts__track {
+  display: flex;
+  will-change: transform;
+}
+
+/* Slide */
+.ts__slide {
+  flex-shrink: 0;
+  padding: 6px 8px;
+  box-sizing: border-box;
+  cursor: grab;
+}
+
+.ts__slide:active {
+  cursor: grabbing;
+}
+
+/* Card */
+.ts__card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #ece9f0;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  padding: 20px;
+  height: 100%;
+  transition: box-shadow 0.25s;
+}
+
+/* Colored card backgrounds - light pastel colors (all unique) */
+.ts__slide:nth-child(6n+1) .ts__card {
+  background: #F0FBFF;
+  border-color: #D4E8FF;
+}
+
+.ts__slide:nth-child(6n+2) .ts__card {
+  background: #F0FDF4;
+  border-color: #D4F8D9;
+}
+
+.ts__slide:nth-child(6n+3) .ts__card {
+  background: #F5EBFF;
+  border-color: #E8CCFF;
+}
+
+.ts__slide:nth-child(6n+4) .ts__card {
+  background: #F0FDF9;
+  border-color: #D4F8E8;
+}
+
+.ts__slide:nth-child(6n+5) .ts__card {
+  background: #FFFBF0;
+  border-color: #FFE8CC;
+}
+
+.ts__slide:nth-child(6n+6) .ts__card {
+  background: #FFF5F7;
+  border-color: #FFD4DB;
+}
+
+/* Quote watermark icon */
+.ts__quote-icon {
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  color: #9D64AA;
+  opacity: 0.08;
+}
+
+/* Card content */
+.ts__card-body {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 16px;
+}
+
+.ts__quote {
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  color: #4a4a5a;
+  line-height: 1.65;
+  flex: 1;
+}
+
+/* Author row */
+.ts__author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-top: 12px;
+  border-top: 1px solid #f0edf7;
+}
+
+/* Avatar */
+.ts__avatar-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.ts__avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.ts__avatar-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: rgba(123, 92, 191, 0.2);
+}
+
+.ts__author-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #2d2d2d;
+  margin: 0;
+}
+
+.ts__author-handle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  color: #9b9b9b;
+  margin: 0;
+}
+
+/* Dots */
+.ts__dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin-top: 24px;
+}
+
+.ts__dot-btn {
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ts__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #d0cbc3;
+  transition: background 0.2s;
+}
+
+.ts__dot--active {
+  background: #9D64AA;
+}
+
+.ts__dot-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: rgba(123, 92, 191, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .ts {
+    padding: 36px 20px;
+  }
+
+  .ts__title {
+    font-size: 18px;
+  }
+}

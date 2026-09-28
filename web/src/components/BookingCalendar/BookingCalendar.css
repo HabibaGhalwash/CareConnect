@@ -1,0 +1,131 @@
+/* ── BookingCalendar ─────────────────────────────── */
+.bc {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 16px;
+  width: 100%;
+  max-width: 320px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+/* Header row */
+.bc__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.bc__month-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #2d2d2d;
+}
+
+.bc__nav-btn {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: #9D64AA;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  line-height: 1;
+  transition: background 0.15s;
+}
+
+.bc__nav-btn:hover {
+  background: #f3effc;
+}
+
+/* Weekday labels */
+.bc__weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-bottom: 6px;
+  width: 100%;
+}
+
+.bc__weekday {
+  font-size: 11px;
+  font-weight: 600;
+  color: #aaa;
+  text-align: center;
+  text-transform: lowercase;
+  padding: 4px 0;
+}
+
+/* Day grid */
+.bc__grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  width: 100%;
+}
+
+.bc__cell {
+  width: 100%;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 500;
+  color: #2d2d2d;
+  border: none;
+  background: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  font-family: 'Poppins', sans-serif;
+  padding: 0;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.bc__cell:hover:not(:disabled):not(.bc__cell--selected) {
+  background: #f3effc;
+  color: #9D64AA;
+}
+
+/* Today highlight (unfilled circle outline) */
+.bc__cell--today {
+  border: 1.5px solid #9D64AA;
+  color: #9D64AA;
+  font-weight: 700;
+}
+
+/* Selected day */
+.bc__cell--selected {
+  background: #9D64AA;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* Past / disabled days */
+.bc__cell--past {
+  color: #d0cbc3;
+  cursor: default;
+}
+
+.bc__cell--blank {
+  background: none;
+  cursor: default;
+  pointer-events: none;
+}
+
+/* Cells beyond current month (greyed out numbers) */
+.bc__cell--outside {
+  color: #d0cbc3;
+}
+
+@media (max-width: 480px) {
+  .bc {
+    padding: 12px;
+  }
+  .bc__cell {
+    font-size: 11px;
+  }
+}
